@@ -10,3 +10,24 @@ More Details
 Extensive details can be found in this spreadsheet
 https://docs.google.com/spreadsheets/d/1IGO0l0Agk4cjSxyAzKUOR74ghyhvfep72m80r9N6jcU/edit#gid=904111712
 
+## training
+
+- as training we will all work on this readme file.
+- these parts are missing from this file:
+  - description
+  - objectives and functionality
+  - references and useful links.
+  
+- we want each one of you spend 10 mins doing the following:
+
+1. clone the project to your local invironment.
+2. chose part you want to work on.
+3. create branch with meaningfull name, eg. readme-description.
+4. update the readme file
+5. commit changes.
+6. push to this repo and make a pull request.
+7. make sure your comparing to staging.
+8. review your teams code
+9. when a PR getting reviewed and accepted we are going to merge to `staging`
+10. in our weekly meeting we discuss the stuff in staging and merge it to `master`
+
