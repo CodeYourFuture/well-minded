@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('/authors', (req, res) => {
     res.json({
         authors: ["Ferhat", "Minko", "Roxana", "Ahmad", "Irving"]
     })
