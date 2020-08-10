@@ -1,0 +1,23 @@
+{
+  "name": "well-minded",
+  "version": "1.0.0",
+  "description": " user-friendly platform meant to promote free of charge professional mental health support and link users with appropriate means of support.",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeYourFuture/well-minded.git"
+  },
+  "keywords": [
+    "well-midem",
+    "mental-health"
+  ],
+  "author": "Ferhat Minko Roxana Irving Ahmad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeYourFuture/well-minded/issues"
+  },
+  "homepage": "https://github.com/CodeYourFuture/well-minded#readme"
+}
