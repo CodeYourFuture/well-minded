@@ -7,7 +7,7 @@ function App() {
   const [authors, setAuthors] = useState([]);
 
   useEffect(() => {
-    fetch(`${domain}/`)
+    fetch(`${domain}/authors`)
       .then(res => res.json())
       .then(result => setAuthors(result.authors))
   }, [])
