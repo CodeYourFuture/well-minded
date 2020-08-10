@@ -1,5 +1,13 @@
 # Well Minded
 
+Description:
+Modern life has countless advantages for people of today's world however it brings also some bad side effects to our lifes which might not be so good for our mental health. Statistics show that one adult in six has a common mental problem in England. If you’re in good mental health, you can:
+
+- Make the most of your potential
+- Cope with life
+- Play a full part in your family, workplace, community and among friends.
+  Our app will provide wide range of options for people who need mental health advice. Different age groups might be the potential users of our app. Articles about mental health, charities which provide free counceling or emergency contact numbers will be served in the app. Furthermore social network sites and user reviews will be interactive parts of our app.
+
 The main goal of the project is to create a space where people can get information about free support towards their mental health. The platform is meant to gather charities, free support groups, and free resources in the same place as at the moment, finding accessible professional support can be challenging. This fact may be discouraging for people who are already struggling and are trying to find alternative professional support, as there are many users who have tried clinical settings and are looking for a therapeutic safe space. The platform can be used by people dealing with mental health issues or people from their support network. As the website will gather organisations, users will be redirected to the contact of these.
 
 For the website to have an emphasis on mental health and to advocate this, it would need to have additional information. This would imply having resources displayed on the website, free courses, and specialised blogs that people can find helpful.
