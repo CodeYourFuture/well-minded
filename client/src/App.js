@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import domain from './config';
 
 function App() {
+
+  const [authors, setAuthors] = useState([]);
+
+  useEffect(() => {
+    fetch(`${domain}/`)
+      .then(res => res.json())
+      .then(result => setAuthors(result.authors))
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App-header">
+      <h1>Authors:</h1>
+      <ul>
+        {
+          authors.length > 0 ? authors.map((a, i) => <li key={i}>{a}</li>) : <p>loading...</p>
+        }
+      </ul>
     </div>
   );
 }
