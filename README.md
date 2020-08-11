@@ -16,7 +16,7 @@ In conclusion, Well-minded is a user-friendly platform meant to promote free of 
 Extensive details can be found in this spreadsheet
 https://docs.google.com/spreadsheets/d/1IGO0l0Agk4cjSxyAzKUOR74ghyhvfep72m80r9N6jcU/edit#gid=904111712
 
-## training
+## training 
 
 - as training we will all work on this readme file.
 - these parts are missing from this file:
