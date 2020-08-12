@@ -11,7 +11,18 @@ In line with it being easy to navigate, it is meant to be a view-only website, u
 Since Well-minded is meant to be a point of refuge for people facing mental health challenges it is important to make it available to everyone by taking into account website accessibility and implementing appropriate design and functionality.
 
 In conclusion, Well-minded is a user-friendly platform meant to promote free of charge professional mental health support and link users with appropriate means of support.
-(More Details)
+
+
+Objectives and functionality: 
+
+The main objective of the platform is to promote mental health by connecting users with appropriate free mental health services. In order to underpin this goal, the website is aiming to:
+
+‣ Display a list of charities offering free professional support.
+‣ Connect users with professional blogs and courses that would help them have an insight on mental health.
+‣ Be easy to navigate and accesible. 
+‣ Be able to accept user feedback and sugestions. 
+
+
 
 Extensive details can be found in this spreadsheet
 https://docs.google.com/spreadsheets/d/1IGO0l0Agk4cjSxyAzKUOR74ghyhvfep72m80r9N6jcU/edit#gid=904111712
@@ -28,7 +39,7 @@ https://docs.google.com/spreadsheets/d/1IGO0l0Agk4cjSxyAzKUOR74ghyhvfep72m80r9N6
 
 - we want each one of you spend 10 mins doing the following:
 
-1. clone the project to your local invironment.
+1. clone the project to your local environment.
 2. chose part you want to work on.
 3. create branch with meaningfull name, eg. readme-description.
 4. update the readme file
