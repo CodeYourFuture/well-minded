@@ -16,16 +16,7 @@ In conclusion, Well-minded is a user-friendly platform meant to promote free of 
 Extensive details can be found in this spreadsheet
 https://docs.google.com/spreadsheets/d/1IGO0l0Agk4cjSxyAzKUOR74ghyhvfep72m80r9N6jcU/edit#gid=904111712
 
-## commands
-
-you can use all of these commands from the root folder `./` or `well-minded`:
-
-1. npm run dev: run both server & client on your local env.
-2. npm run client: run client only.
-3. npm run server: run server only.
-4. heroku-postbuild: preparing the env when deploying to heroku.
-
-## training
+## training 
 
 - as training we will all work on this readme file.
 - these parts are missing from this file:
