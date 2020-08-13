@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import domain from './config';
 import Header from './components/Header'
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
     <div className="App-header">
       <h1>Authors:</h1>
       <Header/>
+      <Footer/>
     </div>
     
   )
