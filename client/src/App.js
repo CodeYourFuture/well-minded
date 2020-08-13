@@ -3,6 +3,7 @@ import './App.css';
 import domain from './config';
 import Header from './components/Header'
 import Footer from "./components/Footer"
+import Carousel from "./components/Carousel"
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       <h1>Authors:</h1>
       <Header/>
       <Footer/>
+      <Carousel/>
     </div>
     
   )
