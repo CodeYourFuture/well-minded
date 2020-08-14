@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import domain from './config';
 import Header from './components/Header'
-import Footer from "./components/Footer"
+<<
+import {BrowserRouter,Route} from 'react-router-dom'
+import Home from './components/Home'
+import About from "./components/About";
+import Organisations from "./components/Organisations";
+import Resources from "./components/Resources";
+
 
 function App() {
 
@@ -25,13 +31,17 @@ function App() {
   // );
 
   return (
-    <div className="App-header">
-      <h1>Authors:</h1>
-      <Header/>
-      <Footer/>
-    </div>
-    
-  )
+<<
+    <BrowserRouter>
+      <div>
+        <Header />
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/organisations" component={Organisations} />
+        <Route path="/resources" component={Resources} />
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
