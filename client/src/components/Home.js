@@ -6,6 +6,7 @@ const Home = () => {
     <div className="container">
       <div className="row">
         <div className="m-3 text-center p-2 banner">
+          <h1 className="title">Well-minded</h1>
           <Carousel />
         </div>
       </div>

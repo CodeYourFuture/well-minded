@@ -8,6 +8,10 @@ import Home from './components/Home'
 import About from "./components/About";
 import Organisations from "./components/Organisations";
 import Resources from "./components/Resources";
+import Footer from './components/Footer'
+import Login from "./components/Login";
+import Contact from "./components/Contact";
+
 
 
 function App() {
@@ -38,6 +42,9 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/organisations" component={Organisations} />
         <Route path="/resources" component={Resources} />
+        <Route path="/login" component={Login} />
+        <Route path="/contact" component={Contact} />
+        <Footer />
       </div>
     </BrowserRouter>
   );

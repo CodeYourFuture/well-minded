@@ -1,0 +1,28 @@
+footer{
+  margin-top:20px;
+  min-height: 10vh;
+  background:black;
+  color:white;
+}
+.footer-link{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+  padding-top: 20px;
+}
+.footer-link a {
+  color: white;
+  font-size: 1.5rem;
+
+}
+
+.footer-link a:hover {
+  color: yellow;
+  text-decoration: none;
+
+}
+.footer-text{
+  text-align:center;
+  
+}

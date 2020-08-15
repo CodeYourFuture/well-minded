@@ -1,6 +1,7 @@
 body {
   background-color: rgb(247, 240, 231);
   font-size: 1.5rem;
+  font-family: 'Roboto','sans-serif';
 }
 
 .App {
