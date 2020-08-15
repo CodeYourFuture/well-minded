@@ -1,8 +1,11 @@
 import React from "react";
+import imageFour from "../images/image 4.jpg";
+// import imageTwo from "../images/image 2.jpg";
+// import imageThree from "../images/image 3.jpg";
 const Cards = () => {
   return (
     <div class="card">
-      <img src="..." class="card-img-top" alt="..." />
+      <img src="imageOne" class="card-img-top" alt="photo" />
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">
