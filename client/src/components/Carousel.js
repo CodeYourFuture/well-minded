@@ -23,7 +23,7 @@ const Carousel = () => {
           return current + 1;
         }
       });
-    }, 5000);
+    }, 10000);
   }, []);
 
   return (
