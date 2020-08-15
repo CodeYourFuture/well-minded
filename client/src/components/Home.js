@@ -1,6 +1,8 @@
 import React from "react";
 import Carousel from "../components/Carousel";
 import Card1 from "../components/Card1";
+import Card2 from "../components/Card2"
+import Card3 from "../components/Card3";
 const Home = () => {
   return (
     <div className="container">
@@ -22,7 +24,7 @@ const Home = () => {
       </div>
       <div className="row">
         <div className="m-2">
-          <h1>who we do </h1>
+          <h1>what we do </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
             corporis, inventore nostrum eum repellendus, a ipsum quod id dicta
@@ -32,9 +34,15 @@ const Home = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-4"><Card1/></div>
-        <div className="col-lg-4"> hello two </div>
-        <div className="col-lg-4"> hello three</div>
+        <div className="col-lg-4">
+          <Card1 />
+        </div>
+        <div className="col-lg-4">
+          <Card2 />{" "}
+        </div>
+        <div className="col-lg-4">
+          <Card3 />
+        </div>
       </div>
     </div>
   );
