@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
 import Carousel from "../components/Carousel";
-const Home =()=>{
+import Card1 from "../components/Card1";
+const Home = () => {
   return (
     <div className="container">
       <div className="row">
@@ -31,11 +32,11 @@ const Home =()=>{
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-4"> hello one </div>
+        <div className="col-lg-4"><Card1/></div>
         <div className="col-lg-4"> hello two </div>
         <div className="col-lg-4"> hello three</div>
       </div>
     </div>
   );
-}
+};
 export default Home;
