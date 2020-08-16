@@ -1,14 +1,17 @@
 import React from "react";
-
+import {Link} from "react-router-dom"
+import '../css/Footer.css'
 const Footer = () => {
   return (
-    <div className="container text-light bg-dark p-3 mw-90">
-      <footer className="row">
-        <div className="col-md-4 mx-auto">Login</div>
-        <div className="col-md-4 mx-auto">© project for cyf 2020</div>
-        <div className="col-md-4 mx-auto">Contact us</div>
-      </footer>
-    </div>
+    <footer>
+      <div className="footer-link ">
+        <Link to="/login">Login</Link>
+        <Link to="/contact">Contact us</Link>
+      </div>
+      
+        <p className="footer-text"> © project for CYF - Well-minded - ldn class 6 2020 </p>
+    
+    </footer>
   );
 };
 export default Footer;
