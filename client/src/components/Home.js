@@ -1,6 +1,9 @@
 import React from "react";
 import Carousel from "../components/Carousel";
 import '../css/Home.css'
+import imageSix from "../images/image 6.jpg";
+import imageFive from "../images/image 5.jpg";
+import imageFour from "../images/image 4.jpeg";
 const Home = () => {
   return (
     <div className="container">
@@ -47,20 +50,29 @@ const Home = () => {
       <div className="row mt-4">
         <div className="col-lg-4">
           <div className="card cardrow">
-            <img
-              className="card-img-top"
-              src="https://image.shutterstock.com/z/stock-vector-hello-bubble-red-speech-message-hello-speech-message-text-hello-in-flat-vector-bubl-eps-1370668307.jpg"
-              alt="Card image cap"
-            />
+            <img className="card-img-top" src={imageSix} alt="Card image cap" />
             <div className="card-body">
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-                perferendis alias quidem autem commodi pariatur eveniet fugit
-                laudantium, maiores temporibus eaque aliquid consequuntur optio
-                perspiciatis hic mollitia quod, ad reprehenderit. Lorem, ipsum
-                dolor sit amet consectetur adipisicing elit. Odio atque, dolores
-                quas sed nostrum rem ipsum rerum maxime nihil fugiat?
-              </p>
+              <div class="list-group">
+                <a
+                  href="https://www.mentalhealth.org.uk/"
+                  class="list-group-item list-group-item-action-item-primary"
+                >
+                  Mental Health Foundation
+                </a>
+
+                <a
+                  href="https://www.mind.org.uk/"
+                  class="list-group-item list-group-item-action-item-primary"
+                >
+                  Mind
+                </a>
+                <a
+                  href="https://www.together-uk.org/"
+                  class="list-group-item list-group-item-action-item-primary"
+                >
+                  Together
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -69,17 +81,16 @@ const Home = () => {
           <div className="card cardrow">
             <img
               className="card-img-top"
-              src="https://image.shutterstock.com/z/stock-vector-hello-bubble-red-speech-message-hello-speech-message-text-hello-in-flat-vector-bubl-eps-1370668307.jpg"
+              src={imageFive}
               alt="Card image cap"
             />
             <div className="card-body">
+              <h5 class="card-title">ORGANIZATIONS</h5>
               <p className="card-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
                 perferendis alias quidem autem commodi pariatur eveniet fugit
                 laudantium, maiores temporibus eaque aliquid consequuntur optio
-                perspiciatis hic mollitia quod, ad reprehenderit. Lorem, ipsum
-                dolor sit amet consectetur adipisicing elit. Odio atque, dolores
-                quas sed nostrum rem ipsum rerum maxime nihil fugiat?
+                
               </p>
             </div>
           </div>
@@ -88,18 +99,33 @@ const Home = () => {
           <div className="card cardrow">
             <img
               className="card-img-top"
-              src="https://image.shutterstock.com/z/stock-vector-hello-bubble-red-speech-message-hello-speech-message-text-hello-in-flat-vector-bubl-eps-1370668307.jpg"
+              src={imageFour}
               alt="Card image cap"
             />
             <div className="card-body">
-              <p className="card-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-                perferendis alias quidem autem commodi pariatur eveniet fugit
-                laudantium, maiores temporibus eaque aliquid consequuntur optio
-                perspiciatis hic mollitia quod, ad reprehenderit. Lorem, ipsum
-                dolor sit amet consectetur adipisicing elit. Odio atque, dolores
-                quas sed nostrum rem ipsum rerum maxime nihil fugiat?
-              </p>
+              <div class="list-group">
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action active"
+                >
+                  Anxiety
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  Depression
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  Bipolar
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  schizophrenia
+                </a>
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action disabled"
+                >
+                  Stress
+                </a>
+              </div>
             </div>
           </div>
         </div>
