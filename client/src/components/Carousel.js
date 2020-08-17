@@ -4,8 +4,8 @@ import "../css/Carousel.css";
 
 
 import imageOne from "../images/image 1.jpg";
-import imageTwo from "../images/image 2.jpg";
-import imageThree from "../images/image 3.jpg";
+import imageTwo from "../images/image 4.jpg";
+import imageThree from "../images/image 5.jpg";
 
 
 const images = [imageOne, imageTwo, imageThree];
@@ -23,15 +23,19 @@ const Carousel = () => {
           return current + 1;
         }
       });
-    }, 10000);
+    }, 5000);
   }, []);
 
   return (
-    <div >
-      {images.map(
-        (image, index) => index === curr && <img src={image} alt="test" />
-      )}
+    <div classNameName="slide-holder">
+      <div>
+        {images.map(
+          (image, index) => index === curr &&
+          <img  className="car-img"  src={image} alt="test" />
+        )}
+      </div>
     </div>
+    
   );
 };
 
