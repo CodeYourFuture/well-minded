@@ -1,0 +1,32 @@
+[
+  {
+    "logo": "https://theocdstories.com/wp-content/uploads/2020/04/cropped-TheOCDstories-200w.png",
+    "name": "The OCD stories",
+    "category": "OCD",
+    "website": "https://theocdstories.com/"
+  },
+  {
+    "logo": "https://themighty.com/wp-content/themes/themighty/img/xmighty-logo-small,402x.png.pagespeed.ic._QbcW5jkRJ.png",
+    "name": "The mighty",
+    "category": "General Mental Health",
+    "website": "https://themighty.com/"
+  },
+  {
+    "logo": "https://i.pinimg.com/736x/99/0d/3c/990d3c6370b8a8c39bde7a501334599d.jpg",
+    "name": "Wing Of Madness",
+    "category": "Depression",
+    "website": "https://www.wingofmadness.com/"
+  },
+  {
+    "logo": "https://chipur.com/wp-content/uploads/2016/04/Chipur-Blog-Logo-041916.png",
+    "name": "Chipur",
+    "category": "Anxiety",
+    "website": "https://chipur.com/"
+  },
+  {
+    "logo": "https://natashatracy.com/wp-content/uploads/2020/04/natasha-tracy-wordmark-resized.png",
+    "name": "Natasha Tracy",
+    "category": "Bipolar Disorder",
+    "website": "https://natashatracy.com/topic/bipolar-blog/"
+  }
+]
