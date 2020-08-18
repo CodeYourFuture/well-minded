@@ -1,10 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 var path = require('path');
+const resources = require("./routes/resources");
 
 
 const app = express();
 app.use(cors());
+
+// Use Router for each api
+app.use("/api/resources", resources);
 
 app.get('/authors', (req, res) => {
     res.json({
@@ -20,6 +24,8 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
     });
 }
+
+
 
 const Port = process.env.PORT || 5000;
 
