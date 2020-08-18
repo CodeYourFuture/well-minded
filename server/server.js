@@ -1,10 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 var path = require('path');
+const organisation = require("./routes/organisation");
 
 
 const app = express();
 app.use(cors());
+app.use("/organisation", organisation);
 
 app.get('/authors', (req, res) => {
     res.json({
