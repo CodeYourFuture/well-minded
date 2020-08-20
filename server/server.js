@@ -1,16 +1,42 @@
 const express = require('express');
 const cors = require('cors');
 var path = require('path');
-
+const morgan = require('morgan')
+const mongoose=require('mongoose')
+require("dotenv").config();
+const bodyParser = require("body-parser");
+const resources = require("./routes/resources");
+const db = process.env.MONGO_URL;
 
 const app = express();
 app.use(cors());
+app.use(morgan('dev'))
+
+
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(bodyParser.json())
+//connect to DB 
+mongoose
+  .connect(db, { useUnifiedTopology: true , useNewUrlParser: true })
+  .then(() => {
+    console.log("DB connected");
+  })
+  .catch((err) => console.log(err));
+
 
 app.get('/authors', (req, res) => {
+    console.log("mongo uri", process.env.MONGO_URL)
     res.json({
+        
         authors: ["Ferhat", "Minko", "Roxana", "Ahmad", "Irving"]
     })
 })
+// Use Router for each api
+app.use("/api/resources", resources);
 
 // if deployed, use react build as a code source.
 if (process.env.NODE_ENV === 'production') {
@@ -21,8 +47,8 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-const Port = process.env.PORT || 5000;
 
+const Port = process.env.PORT || 5000;
 
 app.listen(Port, () => {
 
