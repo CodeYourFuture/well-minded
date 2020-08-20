@@ -62,7 +62,7 @@ router.get("/:resourceId", (req, res) => {
     .exec()
     .then((resource) => {
       console.log("from database", resource);
-      if (doc) {
+      if (resource) {
         res.status(200).json(resource);
       } else {
         res.status(404).json({ message: "not valid entry" });
