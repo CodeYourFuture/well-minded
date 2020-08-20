@@ -1,10 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 var path = require('path');
-
+const contact = require("./routes/contact.js")
 
 const app = express();
 app.use(cors());
+
+app.use("api/contact", contact)
 
 app.get('/authors', (req, res) => {
     res.json({

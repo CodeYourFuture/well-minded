@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "../components/Carousel";
-import '../css/Home.css'
+import "../css/Home.css";
 import imageSix from "../images/image 6.jpg";
 import imageFive from "../images/image 5.jpg";
 import imageFour from "../images/image 4.jpeg";
@@ -90,7 +90,6 @@ const Home = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
                 perferendis alias quidem autem commodi pariatur eveniet fugit
                 laudantium, maiores temporibus eaque aliquid consequuntur optio
-                
               </p>
             </div>
           </div>
