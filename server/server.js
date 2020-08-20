@@ -5,13 +5,14 @@ const morgan = require('morgan')
 const mongoose=require('mongoose')
 require("dotenv").config();
 const bodyParser = require("body-parser");
+const resources = require("./routes/resources");
+const db = process.env.MONGO_URL;
 
 const app = express();
 app.use(cors());
 app.use(morgan('dev'))
 
-const resources = require("./routes/resources");
-const db = process.env.MONGO_URL
+
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
