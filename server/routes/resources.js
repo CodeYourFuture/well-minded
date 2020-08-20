@@ -4,14 +4,6 @@ const Resource = require("../models/resource.js");
 
 
 
-//@route GET api/resources
-// router.get("/", (req, res) =>
-//   res
-//     .status(200)
-//     .json({
-//       message: "Handling GET requests to /api/resources"
-//      })
-// );
 
 //@route GET api/resources
 
@@ -43,18 +35,7 @@ router.post("/", (req, res) => {
       });
     });
 })     
-// //@route GET api/resources/:id
-// router.get("/:resourceId", (req, res) => {
-//   const id = req.params.resourceId;
-//   if (id === "special") {
-//     res.status(200).json({
-//       message: "found the special ID",
-//       id: id,
-//     });
-//   } else {
-//     res.status(200).json({ message: "you add an ID" });
-//   }
-// });
+
 //@route GET api/resources/:id
 router.get("/:resourceId", (req, res) => {
   
