@@ -35,6 +35,8 @@ app.get('/authors', (req, res) => {
         authors: ["Ferhat", "Minko", "Roxana", "Ahmad", "Irving"]
     })
 })
+// Use Router for each api
+app.use("/api/resources", resources);
 
 // if deployed, use react build as a code source.
 if (process.env.NODE_ENV === 'production') {
@@ -44,8 +46,7 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
     });
 }
-// Use Router for each api
-app.use("/api/resources", resources);
+
 
 const Port = process.env.PORT || 5000;
 
