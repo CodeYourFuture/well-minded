@@ -1,5 +1,5 @@
 import React from "react";
-import AdminResource from '../components/AdminResources'
+import AdminResource from './AdminResources'
 
 const AdminArea = () => {
   return (

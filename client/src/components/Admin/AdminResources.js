@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../css/AdminResources.css'
+import '../../css/AdminResources.css';
 const AdminResources = () => {
   const [newResource, setNewResource] = useState({
     logo: "",
