@@ -7,6 +7,7 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const resources = require("./routes/resources");
 const organisations = require("./routes/organisations");
+const contact = require("./routes/contact")
 const db = process.env.MONGO_URL;
 
 const app = express();
@@ -36,6 +37,9 @@ app.get("/authors", (req, res) => {
 app.use("/api/resources", resources);
 // Router for Organisation
 app.use("/api/organisations", organisations);
+//Router for Contact 
+app.use("/api/contact", contact)
+
 
 // if deployed, use react build as a code source.
 if (process.env.NODE_ENV === "production") {
