@@ -1,14 +1,4 @@
 import React from "react";
-
-const Contact = () => {
-  return (
-    <div>
-      <h1 className="text-center"> Contact Page </h1>
-    </div>
-  );
-};
-export default Contact;
-import React from "react";
 import "../css/Contact.css";
 
 const Contact = () => {
