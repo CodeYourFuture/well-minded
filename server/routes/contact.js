@@ -8,9 +8,9 @@ router.get("/", (req, res) => {
 });
 
 // /api/contact/messages
-router.get("/", (req, res) => {
-  Contact.find().then(contact => res.status(200).json(contact));
-});
+// router.get("/", (req, res) => {
+//   Contact.find().then(contact => res.status(200).json(contact));
+// });
 
 // /api/contact
 router.post("/", (req, res) => {
