@@ -4,7 +4,7 @@ const Organisations = () => {
   const [org, setOrg] = useState([]);
   const [searchOrg, setSearchOrg] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/organisations/org")
+    fetch("https://staging-well-minded.herokuapp.com/api/organisations/org")
       .then((res) => res.json())
       .then((data) => {
         setOrg(data);
