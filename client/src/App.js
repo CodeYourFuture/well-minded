@@ -13,6 +13,7 @@ import Resources from "./components/Resources";
 import Footer from './components/Footer'
 import Login from "./components/Login";
 import Contact from "./components/Contact";
+import Blogs from "./components/Blogs";
 
 
 
@@ -46,6 +47,7 @@ function App() {
         <Route path="/resources" component={Resources} />
         <Route path="/login" component={Login} />
         <Route path="/contact" component={Contact} />
+        <Route path="/blogs" component={Blogs} />
         <Footer />
       </div>
     </BrowserRouter>
