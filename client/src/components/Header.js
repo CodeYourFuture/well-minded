@@ -5,28 +5,23 @@ import logo from '../images/logo.png';
 const Header = () => {
   return (
     <nav>
-      <img className="logo" src={logo}/>
+      <img className="logo" src={logo} />
       <ul>
         <li>
-          <Link  to="/">
-            Home
-          </Link>
+          <Link to="/">Home</Link>
         </li>
 
         <li>
-          <Link  to="/About">
-            About us
-          </Link>
+          <Link to="/About">About us</Link>
         </li>
         <li>
-          <Link  to="/Organisations">
-            Organisations
-          </Link>
+          <Link to="/Organisations">Organisations</Link>
         </li>
         <li>
-          <Link  to="/Resources">
-            Resources
-          </Link>
+          <Link to="/Resources">Resources</Link>
+        </li>
+        <li>
+          <Link to="/AdminArea">AdminArea</Link>
         </li>
       </ul>
     </nav>

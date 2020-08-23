@@ -1,12 +1,17 @@
 import React from 'react'
 import '../css/Allresources.css'
+
 const Allresources=({resource})=>{
 return (
   <div>
     <div className="card container mb-3 ">
       <div className="row no-gutters">
         <div className="col-md-4">
-          <img src={resource.logo} className="card-img p-3" alt="..." />
+          <img
+            src={resource.logo}
+            className="card-img p-3"
+            alt="..."
+          />
         </div>
         <div className="col-md-8 bg-light ">
           <div className="card-body text-center d-flex-row mt-5">
