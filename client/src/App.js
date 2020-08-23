@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import domain from './config';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import domain from "./config";
 import { BrowserRouter, Route } from "react-router-dom";
-import Header from '../src/components/Header'
-import Home from '../src/components/Home/Home'
-import About from "..src/components/About/About";
+import Header from "../src/components/Header";
+import Home from "../src/components/Home/Home";
+import About from "../src/components/About/About";
 import Organisations from "../src/components/Organisation/Organisations";
 import Resources from "../src/components/Resource/Resources";
-import Footer from '../src/components/Footer'
+import Footer from "../src/components/Footer";
 import Login from "../src/components/Admin/Login";
-import Contact from "../components/Contact/Contact";
-import AdminArea from "./components/AdminArea"
-import Blogs from "./components/Blogs";
-
-
-
+import Contact from "../src/components/Contact/Contact";
+import AdminArea from "../src/components/Admin/AdminArea";
+import Blogs from "../src/components/Home/Blogs";
 
 function App() {
-
   // const [authors, setAuthors] = useState([]);
 
   // useEffect(() => {
@@ -46,14 +42,11 @@ function App() {
         <Route path="/resources" component={Resources} />
         <Route path="/login" component={Login} />
         <Route path="/contact" component={Contact} />
-
         <Route path="/AdminArea" component={AdminArea} />
-
         <Route path="/blogs" component={Blogs} />
-
         <Footer />
       </div>
     </BrowserRouter>
   );
-  }
+}
 export default App;
