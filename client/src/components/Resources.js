@@ -2,6 +2,7 @@ import React,{useState, useEffect} from "react";
 import Allresources from "./Allresources";
 import InputResSearch from "./InputResSearch";
 
+
 const Resources = () => {
   const [resources,setResources]=useState([])
   const [error,setError]=useState(null)
@@ -33,9 +34,12 @@ const Resources = () => {
         searchResource={searchResource}
         setSearchResource={setSearchResource}
       />
+
+      
+
       <div>
         {filteredData.map((resource) => (
-          <Allresources resource={resource} />
+          <Allresources key={resource._id} resource={resource} />
         ))}
       </div>
     </div>

@@ -2,9 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Resource = require("../models/resource.js");
 
-
-
-
 //@route GET api/resources
 
 router.get("/", (req, res) =>
@@ -26,7 +23,10 @@ router.post("/", (req, res) => {
   resource
     .save()
     .then((resource) => {
-      res.status(201).json(resource);
+      res.status(201).json({
+        message:"new resource created",
+        resource:resource
+      });
     })
     .catch((err) => {
       console.log(err)
