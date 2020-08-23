@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Allresources.css'
+import '../../css/Allresources.css'
 
 const Allresources=({resource})=>{
 return (

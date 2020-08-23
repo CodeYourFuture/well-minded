@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from "react";
-import Allresources from "./Allresources";
-import InputResSearch from "./InputResSearch";
+import Allresources from "../../components/Resource/Allresources";
+import InputResSearch from "../../components/Resource/InputResSearch";
 
 
 const Resources = () => {
@@ -34,9 +34,6 @@ const Resources = () => {
         searchResource={searchResource}
         setSearchResource={setSearchResource}
       />
-
-      
-
       <div>
         {filteredData.map((resource) => (
           <Allresources key={resource._id} resource={resource} />

@@ -1,17 +1,21 @@
-/* .cardrow{
-  width:20rem;
-  
-} */
-.card-img-top {
-  width: 20rem; /* You can set the dimensions to whatever you want */
-    height: 15rem;
-    object-fit: cover;
-    margin: 1rem auto;
-     border-radius: 8px;
+.cardrow{
+  height:rem;
   
 }
-.card-container{
-  margin-bottom: 5rem;
+.img-holder{
+  width:20rem;
+  height:15rem;
+}
+
+.card-img-top {
+  width: 100%; /* You can set the dimensions to whatever you want */
+  object-fit:cover;
+  margin: 5px auto;
+  padding:20px;
+  border-radius: 8px;
+}
+.card-container {
+  margin-bottom: 20px;
 }
 
 .title {

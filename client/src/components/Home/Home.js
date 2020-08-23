@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Carousel from "../components/Carousel";
-import "../css/Home.css";
-import imageSix from "../images/image 6.jpg";
-import imageFive from "../images/image 5.jpg";
-import imageFour from "../images/image 4.jpeg";
+import Carousel from "./Carousel";
+import "../../css/Home.css";
+import imageSix from "../../images/image 6.jpg";
+import imageFive from "../../images/image 5.jpg";
+import imageFour from "../../images/image 4.jpeg";
 const Home = () => {
   return (
     <div className="container">
@@ -49,28 +49,38 @@ const Home = () => {
         </div>
       </div>
       <div className="row mt-4 card-container">
-        <div className="col-lg-4">
+        <div className="col-lg-4  card-holder">
           <div className="card cardrow">
-            <img className="card-img-top" src={imageSix} alt="Card image cap" />
+            <div >
+              <img
+                className="card-img-top"
+                src={imageSix}
+                alt="Card image cap"
+              />
+            </div>
+
             <div className="card-body">
-              <h4 class="card-title"> Organizations</h4>
-              <div class="list-group">
+              <h4 className="card-title"> Organizations</h4>
+              <div>
+
+              </div>
+              <div className="list-group">
                 <a
                   href="https://www.mentalhealth.org.uk/"
-                  class="list-group-item list-group-item-action-item-primary"
+                  className="list-group-item list-group-item-action-item-primary"
                 >
                   Mental Health Foundation
                 </a>
 
                 <a
                   href="https://www.mind.org.uk/"
-                  class="list-group-item list-group-item-action-item-primary"
+                  className="list-group-item list-group-item-action-item-primary"
                 >
                   Mind
                 </a>
                 <a
                   href="https://www.together-uk.org/"
-                  class="list-group-item list-group-item-action-item-primary"
+                  className="list-group-item list-group-item-action-item-primary"
                 >
                   Together
                 </a>
@@ -87,7 +97,7 @@ const Home = () => {
               alt="Card image cap"
             />
             <div className="card-body">
-              <h4 class="card-title">Blogs</h4>
+              <h4 className="card-title">Blogs</h4>
               <p>
                 <Link to="/Blogs">Top 20 Mental Health Blogs to Read</Link>
               </p>
@@ -102,35 +112,35 @@ const Home = () => {
               alt="Card image cap"
             />
             <div className="card-body">
-              <h4 class="card-title">Mental Problems</h4>
-              <div class="list-group">
+              <h4 className="card-title">Mental Problems</h4>
+              <div className="list-group">
                 <a
                   href="#"
-                  class="list-group-item list-group-item-action-item-primary"
+                  className="list-group-item list-group-item-action-item-primary"
                 >
                   Anxiety
                 </a>
                 <a
                   href="#"
-                  class="list-group-item list-group-item-action-item-primary"
+                  className="list-group-item list-group-item-action-item-primary"
                 >
                   Depression
                 </a>
                 <a
                   href="#"
-                  class="list-group-item list-group-item-action-item-primary"
+                  className="list-group-item list-group-item-action-item-primary"
                 >
                   Bipolar
                 </a>
                 <a
                   href="#"
-                  class="list-group-item list-group-item-action-item-primary"
+                  className="list-group-item list-group-item-action-item-primary"
                 >
                   Schizophrenia
                 </a>
                 <a
                   href="#"
-                  class="list-group-item list-group-item-action-item-primary"
+                  className="list-group-item list-group-item-action-item-primary"
                 >
                   Stress
                 </a>

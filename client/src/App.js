@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import domain from './config';
-
-import Header from './components/Header'
-
-import {BrowserRouter,Route} from 'react-router-dom'
-import Home from './components/Home'
-
-import About from "./components/About";
-import Organisations from "./components/Organisations";
-import Resources from "./components/Resources";
-import Footer from './components/Footer'
-import Login from "./components/Login";
-import Contact from "./components/Contact";
-
+import { BrowserRouter, Route } from "react-router-dom";
+import Header from '../src/components/Header'
+import Home from '../src/components/Home/Home'
+import About from "..src/components/About/About";
+import Organisations from "../src/components/Organisation/Organisations";
+import Resources from "../src/components/Resource/Resources";
+import Footer from '../src/components/Footer'
+import Login from "../src/components/Admin/Login";
+import Contact from "../components/Contact/Contact";
 import AdminArea from "./components/AdminArea"
-
 import Blogs from "./components/Blogs";
 
 
