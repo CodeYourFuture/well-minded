@@ -9,54 +9,61 @@ const Contact = () => {
         If you have any suggestions or just want to contact us, please complete
         this form
       </p>
-      <form className="form-horizontal">
-        <div className="form-group" >
-          <label for="name" className="control-label col-sm-2">
-            <b>Name</b>
-          </label>
-          <div className="col-sm-10"><input
-            type="text"
-            placeholder="Enter name"
-            name="name"
-            id="name"
-            required
 
-          /></div>
-
-          <label for="email" className="control-label col-sm-2" >
-            <b>Email</b>
+      <div className="mt-5 mb-5">
+        <form className="contact-form">
+          <div>
+            <label for="name" className="control-label mt-2">
+              Name
           </label>
-          <div className="col-sm-10"><input
-            type="text"
-            placeholder="Enter email"
-            name="email"
-            id="email"
-            required
-          /></div>
+            <input className="form-control"
+              type="text"
+              placeholder="Enter name"
+              name="name"
+              id="name"
+              required
 
-          <label for="website" className="control-label col-sm-2">
-            <b>Website</b>
-          </label>
-          <div className="col-sm-10"><input
-            type="text"
-            placeholder="Enter website"
-            name="website"
-            id="website"
-            optional
-          /></div>
-          <label for="comment" className="control-label col-sm-2">
-            <b>Comment</b>
-          </label>
-          <div className="col-sm-10">
+            />
+          </div>
 
-            <textarea name="comment" placeholder="Enter text here...">
+          <div>
+            <label for="email" className="control-label mt-2" >
+              Email
+          </label>
+            <input className="form-control"
+              type="text"
+              placeholder="Enter email"
+              name="email"
+              id="email"
+              required
+            /></div>
+
+          <div>
+            <label for="website" className="control-label mt-2">
+              Website
+          </label>
+            <input className="form-control"
+              type="text"
+              placeholder="Enter website"
+              name="website"
+              id="website"
+              optional
+            /></div>
+
+          <div>
+            <label for="comment" className="control-label mt-2">
+              Comment
+          </label>
+
+
+            <textarea className="form-control" name="comment" placeholder="Enter text here...">
 
             </textarea>
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" className="btn btn-primary mt-3">Submit</button>
 
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
