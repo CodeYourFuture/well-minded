@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../../css/AdminResources.css';
-const AdminResources = () => {
+const ResourceAddForm = () => {
   const [newResource, setNewResource] = useState({
     logo: "",
     name: "",
@@ -40,8 +40,7 @@ const AdminResources = () => {
             value={newResource.logo}
             onChange={handlerAddnewResource}
             className="form-control "
-            />
-          
+          />
         </div>
         <div>
           <label>Name</label>
@@ -87,4 +86,4 @@ const AdminResources = () => {
   );
 };
 
-export default AdminResources;
+export default ResourceAddForm;

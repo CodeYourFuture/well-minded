@@ -1,10 +1,14 @@
 import React from "react";
-import AdminResource from './AdminResources'
-
+import ResourceAddForm from "./ResourceAddForm";
+import ResourceGetId from "./ResourceGetId";
+import ResourceDelId from "./ResourceDelId"
+import ResourceEdId from "./ResourceEdId";
 const AdminArea = () => {
   return (
     <div className='container'>
-      <AdminResource/>
+      <ResourceAddForm/>
+      <ResourceGetId/>
+      
     </div>
   );
 };
