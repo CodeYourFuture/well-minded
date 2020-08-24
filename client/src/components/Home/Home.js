@@ -6,6 +6,7 @@ import imageSix from "../../images/image 6.jpg";
 import imageFive from "../../images/image 5.jpg";
 import imageFour from "../../images/image 4.jpeg"
 import Whatwe from "../Home/Whatwe"
+import Cards from "../Home/Cards"
 const Home = () => {
   return (
     <div className="container">
@@ -35,7 +36,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="row mt-4 card-container">
+      <Cards/>
+      {/* <div className="row mt-4 card-container">
         <div className="col-lg-4  card-holder">
           <div className="card cardrow">
             <div>
@@ -46,7 +48,7 @@ const Home = () => {
               />
             </div>
             <div className="card-body">
-              <h4 className="card-title"> Organizations </h4> <div></div>{" "}
+              <h4 className="card-title"> Organizations </h4> <div></div>
               <div className="list-group">
                 <a
                   href="https://www.mentalhealth.org.uk/"
@@ -78,9 +80,9 @@ const Home = () => {
               alt="Card image cap"
             />
             <div className="card-body">
-              <h4 className="card-title"> Blogs </h4>{" "}
+              <h4 className="card-title"> Blogs </h4>
               <p>
-                <Link to="/Blogs"> Top 20 Mental Health Blogs to Read </Link>{" "}
+                <Link to="/Blogs"> Top 20 Mental Health Blogs to Read </Link>
               </p>
             </div>
           </div>
@@ -93,7 +95,7 @@ const Home = () => {
               alt="Card image cap"
             />
             <div className="card-body">
-              <h4 className="card-title"> Mental Problems </h4>{" "}
+              <h4 className="card-title"> Mental Problems </h4>
               <div className="list-group">
                 <a
                   href="#"
@@ -129,7 +131,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
