@@ -26,7 +26,7 @@ const Resources = () => {
     .filter(
       (resource) =>
         resource.name.toLowerCase().includes(searchResource) ||
-        resource.category.toLowerCase().includes(searchResource)
+        resource.description.toLowerCase().includes(searchResource)
     );
   return (
     <div>

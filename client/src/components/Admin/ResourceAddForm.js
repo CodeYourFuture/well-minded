@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import '../../css/AdminResources.css';
-const AdminResources = () => {
+const ResourceAddForm = () => {
   const [newResource, setNewResource] = useState({
-    logo: "",
+    
     name: "",
-    category: "",
+    description: "",
     website: "",
   });
 
@@ -33,17 +33,6 @@ const AdminResources = () => {
       <form className="resources-form">
         <h1> Add resources</h1>
         <div className="form-group ">
-          <label className="mt-2">Logo</label>
-          <input
-            type="text"
-            name="logo"
-            value={newResource.logo}
-            onChange={handlerAddnewResource}
-            className="form-control "
-            />
-          
-        </div>
-        <div>
           <label>Name</label>
 
           <input
@@ -55,22 +44,22 @@ const AdminResources = () => {
           />
         </div>
         <div>
+          <label className="mt-2">Description</label>
+          <input
+            className="form-control"
+            type="text"
+            name="category"
+            value={newResource.description}
+            onChange={handlerAddnewResource}
+          />
+        </div>
+        <div>
           <label className="mt-2">Website</label>
           <input
             className="form-control"
             type="text"
             name="website"
             value={newResource.website}
-            onChange={handlerAddnewResource}
-          />
-        </div>
-        <div>
-          <label className="mt-2">Category</label>
-          <input
-            className="form-control"
-            type="text"
-            name="category"
-            value={newResource.category}
             onChange={handlerAddnewResource}
           />
         </div>
@@ -87,4 +76,4 @@ const AdminResources = () => {
   );
 };
 
-export default AdminResources;
+export default ResourceAddForm;
