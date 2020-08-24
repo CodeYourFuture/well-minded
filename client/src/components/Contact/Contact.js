@@ -1,7 +1,41 @@
-import React from "react";
+import React,{useState} from "react";
 import "../../css/Contact.css";
+import { set } from "mongoose";
 
 const Contact = () => {
+
+const [ newContact, setNewContact ] = useState({
+  name: "",
+      email: "",
+      website: "",
+      comment: ""
+})
+
+
+const handleContact = (e) => {
+  const addContact = {
+    ...newContact,
+    [e.target.name]: e.target.value,
+  };
+  setNewContact(addContact);
+};
+
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  fetch("https://staging-well-minded.herokuapp.com/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newContact),
+  })
+  .then((res) => res.json(newContact))
+
+  .catch((err) => console.log(err));
+}
+  
+
   return (
     <div className="container">
       <h1 className="text-center"> Contact Us </h1>
@@ -36,6 +70,7 @@ const Contact = () => {
               name="email"
               id="email"
               required
+              onChange={handleContact}
             /></div>
 
           <div>
@@ -48,6 +83,7 @@ const Contact = () => {
               name="website"
               id="website"
               optional
+              onChange={handleContact}
             /></div>
 
           <div>
@@ -56,11 +92,11 @@ const Contact = () => {
           </label>
 
 
-            <textarea className="form-control" name="comment" placeholder="Enter text here...">
+            <textarea className="form-control" name="comment" placeholder="Enter text here..." onChange={handleContact}>
 
             </textarea>
           </div>
-          <button type="submit" className="btn btn-primary mt-3">Submit</button>
+          <button type="submit" className="btn btn-primary mt-3" onClick={handleSubmit}>Submit</button>
 
         </form>
       </div>
