@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "../../css/Organisation.css";
 const Organisations = () => {
   const [org, setOrg] = useState([]);
   const [searchOrg, setSearchOrg] = useState([]);
@@ -11,29 +11,31 @@ const Organisations = () => {
         console.log(data);
       });
   }, []);
-  const filteredOrgs = (value) => {
-    setSearchOrg(org.filter((data) => data.name.toLowerCase().includes(value)));
-  };
+  const filteredOrgs = org.filter((data) =>
+    data.name.toLowerCase().includes(searchOrg)
+  );
 
-  const handleChange = (e) => {
-    filteredOrgs(e.target.value.toLowerCase());
-  };
   return (
     <div className="container">
-      <h2>Search for Organization</h2>
       <input
-        // value={searchOrg}
-        onChange={handleChange}
+        value={searchOrg}
+        onChange={(e) => setSearchOrg(e.target.value)}
         className="input-name"
         type="search"
         name="from"
         placeholder="Search Organization"
       />
-      {searchOrg.map((data,index) => {
+      {filteredOrgs.map((data, index) => {
         return (
           <div key={index}>
-            <p >{data.name}</p>
-            <img src={data.logo} alt="Logo" />
+            <p className="org-text">{data.name}</p>
+            <a href={data.website}>
+              <img
+                className="org-img rounded mx-auto d-block img-responsive"
+                src={data.logo}
+                alt="Logo"
+              />
+            </a>
           </div>
         );
       })}
