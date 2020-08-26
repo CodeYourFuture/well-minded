@@ -1,5 +1,6 @@
 import React from "react";
 import ResourceAddForm from "./ResourceAddForm";
+
 import ResourceEdRe from "./ResourceEdRe";
 
 const AdminArea = ({ resources }) => {
@@ -32,6 +33,7 @@ const AdminArea = ({ resources }) => {
           );
             })
       }
+
     </div>
   );
 };
