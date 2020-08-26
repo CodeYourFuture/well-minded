@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import domain from "../../config";
 import Button from "react-bootstrap/Button";
@@ -8,20 +8,18 @@ const ResourceEdRe = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [addName,setAddName]=useState("")
+  const [addName, setAddName] = useState("");
   const [addDescription, setDescription] = useState("");
   const [addWebsite, setWebsite] = useState("");
-  
-  const newBody={
-    name:addName,
-    description:addDescription,
-    website:addWebsite
-  }
+
+  const newBody = {
+    name: addName,
+    description: addDescription,
+    website: addWebsite,
+  };
 
   const handlerRemove = (id) => {
-    fetch(`${domain}/api/resources/${id}`,
-     { method: "DELETE" })
-     .then((res) =>
+    fetch(`${domain}/api/resources/${id}`, { method: "DELETE" }).then((res) =>
       res.json(console.log("resource deleted"))
     );
   };
@@ -34,8 +32,7 @@ const ResourceEdRe = (props) => {
         "Content-Type": "application/json",
       },
       body,
-    })
-      .then((res) => res.json(console.log("resource updated")));
+    }).then((res) => res.json(console.log("resource updated")));
   };
 
   return (
@@ -72,7 +69,7 @@ const ResourceEdRe = (props) => {
             />
           </form>
         </Modal.Body>
-        <Modal.Footer >
+        <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
