@@ -1,0 +1,12 @@
+.org-img {
+  height:20rem ;
+}
+.org-text{
+    text-align: center;
+    font-family:arial,helvetica;
+    font-weight: 600;
+    font-size:25px;
+}
+.container{
+    margin-top: 1rem;
+}

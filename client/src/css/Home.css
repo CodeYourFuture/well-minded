@@ -1,18 +1,15 @@
 .cardrow{
-  height:rem;
+  height:40rem;
   
-}
-.img-holder{
-  width:20rem;
-  height:15rem;
 }
 
 .card-img-top {
-  width: 100%; /* You can set the dimensions to whatever you want */
+  height: 17rem;
+  width: 100%; 
   object-fit:cover;
   margin: 5px auto;
   padding:20px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 .card-container {
   margin-bottom: 20px;

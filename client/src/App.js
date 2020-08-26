@@ -14,23 +14,23 @@ import AdminArea from "../src/components/Admin/AdminArea";
 import Blogs from "../src/components/Home/Blogs";
 
 function App() {
-  // const [authors, setAuthors] = useState([]);
+  const [resources,setResources]=useState([])
+  const [error,setError]=useState(null)
 
-  // useEffect(() => {
-  //   fetch(`${domain}/authors`)
-  //     .then(res => res.json())
-  //     .then(result => setAuthors(result.authors))
-  // }, [])
-  // return (
-  //   <div className="App-header">
-  //     <h1>Authors:</h1>
-  //     <ul>
-  //       {
-  //         authors.length > 0 ? authors.map((a, i) => <li key={i}>{a}</li>) : <p>loading...</p>
-  //       }
-  //     </ul>
-  //   </div>
-  // );
+  useEffect(()=>{
+    fetch(`${domain}/api/resources/`)
+      .then((res) => res.json())
+      .then((data) => setResources(data))
+      .catch(setError);
+  },[])
+   if (error) {
+     return (
+       <div>
+         <h2>Error</h2>
+         {error.message}
+       </div>
+     );
+   }
 
   return (
     <BrowserRouter>
@@ -39,10 +39,18 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/organisations" component={Organisations} />
-        <Route path="/resources" component={Resources} />
+        <Route
+          path="/resources"
+          render={(props) => <Resources {...props} resources={resources} />}
+        />
+        <Route
+          path="/AdminArea"
+          render={(props) =>
+           <AdminArea {...props} resources={resources} />}
+        />
         <Route path="/login" component={Login} />
         <Route path="/contact" component={Contact} />
-        <Route path="/AdminArea" component={AdminArea} />
+
         <Route path="/blogs" component={Blogs} />
         <Footer />
       </div>
