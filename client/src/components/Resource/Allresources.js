@@ -5,7 +5,9 @@ const Allresources = ({ resource }) => {
   return (
     <div className="container">
       <div className="card mb-2">
-        <h2 className="card-header">{resource.name}</h2>
+        <h2  className="card-header">
+          {resource.name} 
+        </h2>
         <div className="card-body">
           <div>
             <p className="card-text">{resource.description}</p>

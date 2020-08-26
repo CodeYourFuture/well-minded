@@ -29,7 +29,7 @@ const Organisations = () => {
         name="from"
         placeholder="Search Organization"
       />
-      {searchOrg.map((data,index) => {
+      {org.map((data,index) => {
         return (
           <div key={index}>
             <p >{data.name}</p>
