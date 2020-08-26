@@ -1,40 +1,56 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "../../css/Contact.css";
 import { set } from "mongoose";
 
 const Contact = () => {
 
-const [ newContact, setNewContact ] = useState({
-  name: "",
-      email: "",
-      website: "",
-      comment: ""
-})
-
-
-const handleContact = (e) => {
-  const addContact = {
-    ...newContact,
-    [e.target.name]: e.target.value,
-  };
-  setNewContact(addContact);
-};
-
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  fetch("https://staging-well-minded.herokuapp.com/api/contact", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newContact),
+  const [newContact, setNewContact] = useState({
+    name: "",
+    email: "",
+    website: "",
+    comment: ""
   })
-  .then((res) => res.json(newContact))
-
-  .catch((err) => console.log(err));
-}
   
+
+  const handleContact = (e) => {
+    const addContact = {
+      ...newContact,
+      [e.target.name]: e.target.value,
+    };
+
+    setNewContact(addContact);
+  };
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("http://localhost:5000/api/contact",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newContact)
+
+      })
+
+
+      .then((res) => {
+      
+        setNewContact({
+          name: "",
+          email: "",
+          website: "",
+          comment: ""
+        })
+      })
+
+
+      .catch((err) => console.log(err))
+
+  }
+
 
   return (
     <div className="container">
@@ -54,9 +70,10 @@ const handleSubmit = (e) => {
               type="text"
               placeholder="Enter name"
               name="name"
+              value={newContact.name}
               id="name"
               required
-
+              onChange={handleContact}
             />
           </div>
 
@@ -69,6 +86,7 @@ const handleSubmit = (e) => {
               placeholder="Enter email"
               name="email"
               id="email"
+              value={newContact.email}
               required
               onChange={handleContact}
             /></div>
@@ -82,6 +100,7 @@ const handleSubmit = (e) => {
               placeholder="Enter website"
               name="website"
               id="website"
+              value={newContact.website}
               optional
               onChange={handleContact}
             /></div>
@@ -92,7 +111,7 @@ const handleSubmit = (e) => {
           </label>
 
 
-            <textarea className="form-control" name="comment" placeholder="Enter text here..." onChange={handleContact}>
+            <textarea className="form-control" name="comment" placeholder="Enter text here..." value={newContact.comment} onChange={handleContact}>
 
             </textarea>
           </div>
