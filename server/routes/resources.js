@@ -14,9 +14,8 @@ router.get("/", (req, res) =>
 //@route POST api/resources
 router.post("/", (req, res) => {
   const resource = new Resource({
-    logo: req.body.logo,
     name: req.body.name,
-    category: req.body.category,
+    description: req.body.description,
     website: req.body.website,
   });
   
@@ -64,11 +63,9 @@ router.put("/:resourceId", (req, res) => {
   if (req.body.name){
     data.name= req.body.name
   }
-  if (req.body.logo) {
-    data.logo = req.body.logo;
-  }
-  if (req.body.category) {
-    data.category = req.body.category;
+ 
+  if (req.body.description) {
+    data.description = req.body.description;
   }
   if (req.body.website) {
     data.website = req.body.website;

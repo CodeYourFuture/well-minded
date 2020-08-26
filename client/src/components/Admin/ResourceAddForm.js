@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+
 import '../../css/AdminResources.css';
 const ResourceAddForm = () => {
   const [newResource, setNewResource] = useState({
-    
     name: "",
     description: "",
     website: "",
@@ -16,8 +16,8 @@ const ResourceAddForm = () => {
     setNewResource(addResource);
   };
 
-  const handlerAddResourceSubmit = (event) => {
-    event.preventDefault();
+  const handlerAddResourceSubmit = () => {
+    
     fetch(`http://localhost:5000/api/resources`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -25,12 +25,14 @@ const ResourceAddForm = () => {
     })
       .then((res) => res.json(newResource))
 
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+
+     
   };
 
   return (
     <div className="mt-5 mb-5">
-      <form className="resources-form">
+      <form className="resources-form" >
         <h1> Add resources</h1>
         <div className="form-group ">
           <label>Name</label>
@@ -48,7 +50,7 @@ const ResourceAddForm = () => {
           <input
             className="form-control"
             type="text"
-            name="category"
+            name="description"
             value={newResource.description}
             onChange={handlerAddnewResource}
           />

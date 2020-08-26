@@ -25,7 +25,9 @@ const Organisations = () => {
         name="from"
         placeholder="Search Organization"
       />
+
       {filteredOrgs.map((data, index) => {
+
         return (
           <div key={index}>
             <p className="org-text">{data.name}</p>
