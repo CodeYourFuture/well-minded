@@ -17,7 +17,7 @@ const OrganisationAddForm = () => {
       location,
       description,
     });
-    fetch("http://localhost:5000/api/organisations/org", {
+    fetch("/api/organisations/org", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
