@@ -4,12 +4,11 @@ const Resource = require("../models/resource.js");
 
 //@route GET api/resources
 
-router.get("/", (req, res) =>
-  { Resource
-    .find()
+router.get("/", (req, res) => {
+  Resource.find()
+    .sort({ _id: -1 })
     .then((resources) => res.status(200).json(resources));
-  }
-);
+});
 
 //@route POST api/resources
 router.post("/", (req, res) => {
@@ -18,26 +17,25 @@ router.post("/", (req, res) => {
     description: req.body.description,
     website: req.body.website,
   });
-  
+
   resource
     .save()
     .then((resource) => {
       res.status(201).json({
-        message:"new resource created",
-        resource:resource
+        message: "new resource created",
+        resource: resource,
       });
     })
     .catch((err) => {
-      console.log(err)
+      console.log(err);
       res.status(500).json({
         error: err,
       });
     });
-})     
+});
 
 //@route GET api/resources/:id
 router.get("/:resourceId", (req, res) => {
-  
   Resource.findById(req.params.resourceId)
     .exec()
     .then((resource) => {
@@ -55,27 +53,30 @@ router.get("/:resourceId", (req, res) => {
       });
     });
 });
-//@route PUT api/resources/:id
-router.put("/:resourceId", (req, res) => {
-  const searchId=({_id:req.params.resourceId})
-  delete req.body.id
-  const data = {}
-  if (req.body.name){
-    data.name= req.body.name
+//@route PATCH api/resources/:id
+router.patch("/:resourceId", (req, res) => {
+  const searchId = { _id: req.params.resourceId };
+  delete req.body.id;
+  const data = {};
+  if (req.body.name) {
+    data.name = req.body.name;
   }
- 
+
   if (req.body.description) {
     data.description = req.body.description;
   }
   if (req.body.website) {
     data.website = req.body.website;
   }
-  const options = {returnOriginal:false}
-  
-  Resource.findOneAndUpdate(searchId,{$set: data}, options)
+  const options = { new: true };
+
+  Resource.findOneAndUpdate(searchId, { $set: data }, options)
     .exec()
-    .then(() => {
-      res.status(200).json({message:"Resource Updated"});
+    .then((resource) => {
+      res.status(200).json({
+        message: "Resource Updated",
+        resource: resource,
+      });
     })
     .catch((err) => {
       res.status(500).json({
@@ -85,7 +86,7 @@ router.put("/:resourceId", (req, res) => {
 });
 //@route DELETE api/resources/:id
 router.delete("/:resourceId", (req, res) => {
-  const id = req.params.resourceId
+  const id = req.params.resourceId;
   Resource.remove({ _id: id })
     .exec()
     .then(() => {
@@ -99,7 +100,5 @@ router.delete("/:resourceId", (req, res) => {
       });
     });
 });
-
-
 
 module.exports = router;

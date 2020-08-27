@@ -3,14 +3,14 @@ import Modal from "react-bootstrap/Modal";
 import domain from "../../config";
 import Button from "react-bootstrap/Button";
 
-const ResourceEdRe = (props) => {
+const ResourceEdRe = ({ resource, removeResourceById, updateResource }) => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [addName, setAddName] = useState("");
-  const [addDescription, setDescription] = useState("");
-  const [addWebsite, setWebsite] = useState("");
+
+  const [addName, setAddName] = useState(resource.name);
+  const [addDescription, setAddDescription] = useState(resource.description);
+  const [addWebsite, setAddWebsite] = useState(resource.website);
 
   const newBody = {
     name: addName,
@@ -18,53 +18,78 @@ const ResourceEdRe = (props) => {
     website: addWebsite,
   };
 
-  const handlerRemove = (id) => {
-    fetch(`${domain}/api/resources/${id}`, { method: "DELETE" }).then((res) =>
-      res.json(console.log("resource deleted"))
-    );
+  const handlerRemove = () => {
+    if (window.confirm(`Are you sure you want to remove '${resource.name}'?`)) {
+      fetch(`${domain}/api/resources/${resource._id}`, {
+        method: "DELETE",
+      }).then((response) => {
+        if (response.ok) {
+          removeResourceById(resource._id);
+        } else {
+          window.alert(`fail delete: ${resource.name}`);
+        }
+      });
+    }
   };
 
-  const handleUpdate = (id) => {
+  const handleUpdate = () => {
     const body = JSON.stringify(newBody);
-    fetch(`${domain}/api/resources/${id}`, {
-      method: "PUT",
+
+    fetch(`${domain}/api/resources/${resource._id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body,
-    }).then((res) => res.json(console.log("resource updated")));
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        updateResource(data.resource);
+        handleClose();
+      });
   };
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className="mr-2">
         edit
       </Button>
-      <Button variant="danger" onClick={() => handlerRemove(props.res._id)}>
+      <Button variant="danger" onClick={handlerRemove}>
         remove
       </Button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
         <Modal.Header closeButton>
-          <Modal.Title>{props.res.name}</Modal.Title>
+          <Modal.Title>
+            <h2> Update Resource</h2>
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
             <label>Name</label>
             <input
+              value={addName}
               onChange={(e) => {
                 setAddName(e.target.value);
               }}
             />
             <label>description</label>
             <input
+              value={addDescription}
               onChange={(e) => {
-                setDescription(e.target.value);
+                setAddDescription(e.target.value);
               }}
             />
             <label>Website</label>
             <input
+              value={addWebsite}
               onChange={(e) => {
-                setWebsite(e.target.value);
+                setAddWebsite(e.target.value);
               }}
             />
           </form>
@@ -73,7 +98,7 @@ const ResourceEdRe = (props) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={() => handleUpdate(props.res._id)}>
+          <Button variant="primary" onClick={handleUpdate}>
             Save Changes
           </Button>
         </Modal.Footer>
