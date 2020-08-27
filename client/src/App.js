@@ -17,12 +17,16 @@ function App() {
   const [resources,setResources]=useState([])
   const [error,setError]=useState(null)
 
+  
+
+
   useEffect(()=>{
     fetch(`${domain}/api/resources/`)
       .then((res) => res.json())
       .then((data) => setResources(data))
       .catch(setError);
   },[])
+
    if (error) {
      return (
        <div>
@@ -45,8 +49,14 @@ function App() {
         />
         <Route
           path="/AdminArea"
-          render={(props) =>
-           <AdminArea {...props} resources={resources} />}
+          render={(props) => (
+            <AdminArea
+              {...props}
+              resources={resources}
+              setResources={setResources}
+              
+            />
+          )}
         />
         <Route path="/login" component={Login} />
         <Route path="/contact" component={Contact} />

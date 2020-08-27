@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import domain from "../../config";
+import "../../css/AdminResources.css";
 
-import '../../css/AdminResources.css';
-const ResourceAddForm = () => {
-  const [newResource, setNewResource] = useState({
+const ResourceAddForm = ({ addResource }) => {
+  
+  const emptyResource = {
     name: "",
     description: "",
     website: "",
-  });
+  };
+  const [newResource, setNewResource] = useState(emptyResource);
 
   const handlerAddnewResource = (event) => {
     const addResource = {
@@ -16,23 +19,23 @@ const ResourceAddForm = () => {
     setNewResource(addResource);
   };
 
-  const handlerAddResourceSubmit = () => {
-    
-    fetch(`http://localhost:5000/api/resources`, {
+  const handlerAddResourceSubmit = (e) => {
+    e.preventDefault();
+
+    fetch(`${domain}/api/resources`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newResource),
     })
-      .then((res) => res.json(newResource))
+      .then((res) => res.json())
+      .then((data) => addResource(data.resource));
 
-      .catch((err) => console.log(err))
-
-     
+    setNewResource(emptyResource);
   };
 
   return (
     <div className="mt-5 mb-5">
-      <form className="resources-form" >
+      <form className="resources-form">
         <h1> Add resources</h1>
         <div className="form-group ">
           <label>Name</label>
@@ -74,6 +77,7 @@ const ResourceAddForm = () => {
           add resource
         </button>
       </form>
+      
     </div>
   );
 };
