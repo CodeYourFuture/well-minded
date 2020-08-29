@@ -14,23 +14,28 @@ import AdminArea from "../src/components/Admin/AdminArea";
 import Blogs from "../src/components/Home/Blogs";
 
 function App() {
-  const [resources,setResources]=useState([])
-  const [error,setError]=useState(null)
+  const [resources, setResources] = useState([]);
+  const [organisations, setOrganisations] = useState([]);
+  const [error, setError] = useState(null);
+  Promise.all([
+    fetch(`${domain}/api/resources/`).res.json(),
+    fetch(`${domain}/api/organisations/org`).res.json()
+  ])
+    .then(([data1, data2]) => {
+      setResources(data1);
+      setOrganisations(data2);
+      console.log(data2);
+    })
+    .catch(setError);
 
-  useEffect(()=>{
-    fetch(`${domain}/api/resources/`)
-      .then((res) => res.json())
-      .then((data) => setResources(data))
-      .catch(setError);
-  },[])
-   if (error) {
-     return (
-       <div>
-         <h2>Error</h2>
-         {error.message}
-       </div>
-     );
-   }
+  if (error) {
+    return (
+      <div>
+        <h2>Error</h2>
+        {error.message}
+      </div>
+    );
+  }
 
   return (
     <BrowserRouter>
@@ -45,8 +50,7 @@ function App() {
         />
         <Route
           path="/AdminArea"
-          render={(props) =>
-           <AdminArea {...props} resources={resources} />}
+          render={(props) => <AdminArea {...props} resources={resources} />}
         />
         <Route path="/login" component={Login} />
         <Route path="/contact" component={Contact} />
