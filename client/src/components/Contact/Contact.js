@@ -81,8 +81,9 @@ const Contact = () => {
             <label for="email" className="control-label mt-2" >
               Email
           </label>
+          
             <input className="form-control"
-              type="text"
+              type="email"
               placeholder="Enter email"
               name="email"
               id="email"
@@ -96,7 +97,7 @@ const Contact = () => {
               Website
           </label>
             <input className="form-control"
-              type="text"
+              type="url"
               placeholder="Enter website"
               name="website"
               id="website"
@@ -118,6 +119,7 @@ const Contact = () => {
           <button type="submit" className="btn btn-primary mt-3" onClick={handleSubmit}>Submit</button>
 
         </form>
+
       </div>
     </div>
   );
