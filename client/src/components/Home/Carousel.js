@@ -4,13 +4,9 @@ import "../../css/Carousel.css";
 import Carousel from 'react-bootstrap/Carousel'
 import Image from 'react-bootstrap/Image'
 
-
 import imageOne from "../../images/image 1.jpg";
-import imageTwo from "../../images/image 4.jpg";
+import imageTwo from "../../images/image 2.jpg";
 import imageThree from "../../images/image 3.jpg";
-
-
-const images = [imageOne, imageTwo, imageThree];
 
 const ControlledCarousel = () => {
   const [index, setIndex] = useState(0);

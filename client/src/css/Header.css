@@ -6,7 +6,7 @@ nav{
   display:flex;
   justify-content: space-around;
   align-items: center;
-  background:darkblue;
+  background:rgb(195, 127, 18);
   color:rgb(80, 75, 75);
   margin-bottom: 5rem;
 }
@@ -21,7 +21,7 @@ nav{
 }
 
 ul {
-width:40%;
+width:50%;
 display:flex;
 justify-content: space-around;
 align-items: center;
@@ -30,14 +30,14 @@ text-decoration: none;
 } 
 
 ul li a{
-color:white;
+color:rgb(27, 24, 24);
 font-size: 1.5rem;
 margin:5px;
 white-space:nowrap;
 }
 
 ul li a:hover{
-  color:yellow;
+  color:rgb(146, 65, 62);
   text-decoration: none;
 
 }
