@@ -1,6 +1,8 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../../css/Carousel.css";
+import Carousel from 'react-bootstrap/Carousel'
+import Image from 'react-bootstrap/Image'
 
 
 import imageOne from "../../images/image 1.jpg";
@@ -10,33 +12,32 @@ import imageThree from "../../images/image 3.jpg";
 
 const images = [imageOne, imageTwo, imageThree];
 
-const Carousel = () => {
-  const [curr, setCurr] = useState(0);
-  // current === images.length - 1 ? 0 : current + 1;
+const ControlledCarousel = () => {
+  const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    setInterval(() => {
-      setCurr((current) => {
-        if (current === images.length - 1) {
-          return 0;
-        } else {
-          return current + 1;
-        }
-      });
-    }, 5000);
-  }, []);
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex)
+  }
+
+
 
   return (
-    <div classNameName="slide-holder">
-      <div>
-        {images.map(
-          (image, index) => index === curr &&
-          <img  className="car-img"  src={image} alt="test" />
-        )}
-      </div>
-    </div>
-    
+
+    <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item>
+        <Image src={imageOne} className="carousel-image" fluid />
+
+      </Carousel.Item>
+      <Carousel.Item>
+        <Image src={imageTwo} className="carousel-image" fluid />
+
+      </Carousel.Item>
+      <Carousel.Item>
+        <Image src={imageThree} className="carousel-image" fluid />
+      </Carousel.Item>
+    </Carousel>
+
   );
 };
 
-export default Carousel;
+export default ControlledCarousel;
