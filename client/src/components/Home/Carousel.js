@@ -1,7 +1,8 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../../css/Carousel.css";
 import Carousel from 'react-bootstrap/Carousel'
+import Image from 'react-bootstrap/Image'
 
 
 import imageOne from "../../images/image 1.jpg";
@@ -13,7 +14,7 @@ const images = [imageOne, imageTwo, imageThree];
 
 const ControlledCarousel = () => {
   const [index, setIndex] = useState(0);
-  // current === images.length - 1 ? 0 : current + 1;
+
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex)
   }
@@ -24,26 +25,15 @@ const ControlledCarousel = () => {
 
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={imageOne}
-          alt="First slide"
-        />
-        
+        <Image src={imageOne} className="carousel-image" fluid />
+
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={imageTwo}
-          alt="Second slide"
-        />
+        <Image src={imageTwo} className="carousel-image" fluid />
+
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={imageThree}
-          alt="Third slide"
-        />
+        <Image src={imageThree} className="carousel-image" fluid />
       </Carousel.Item>
     </Carousel>
 
