@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect } from "react";
+// import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../css/Carousel.css";
 
-
 import imageOne from "../../images/image 1.jpg";
-import imageTwo from "../../images/image 4.jpg";
+import imageTwo from "../../images/image 2.jpg";
 import imageThree from "../../images/image 3.jpg";
-
 
 const images = [imageOne, imageTwo, imageThree];
 
@@ -35,8 +35,9 @@ const Carousel = () => {
         )}
       </div>
     </div>
-    
+
   );
 };
+
 
 export default Carousel;
