@@ -33,32 +33,34 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <div>
-        <Header />
-        <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/organisations" component={Organisations} />
-        <Route
-          path="/resources"
-          render={(props) => <Resources {...props} resources={resources} />}
-        />
-        <Route
-          path="/AdminArea"
-          render={(props) => (
-            <AdminArea
-              {...props}
-              resources={resources}
-              setResources={setResources}
-            />
-          )}
-        />
-        <Route path="/login" component={Login} />
-        <Route path="/contact" component={Contact} />
+    
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/organisations" component={Organisations} />
+          <Route
+            path="/resources"
+            render={(props) => <Resources {...props} resources={resources} />}
+          />
+          <Route
+            path="/AdminArea"
+            render={(props) => (
+              <AdminArea
+                {...props}
+                resources={resources}
+                setResources={setResources}
+              />
+            )}
+          />
+          <Route path="/login" component={Login} />
+          <Route path="/contact" component={Contact} />
 
-        <Footer />
-      </div>
-    </BrowserRouter>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    
   );
 }
 export default App;

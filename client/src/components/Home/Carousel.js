@@ -3,7 +3,7 @@ import "../../css/Carousel.css";
 import Carousel from "react-bootstrap/Carousel";
 import Image from "react-bootstrap/Image";
 
-import imageOne from "../../images/image 1.jpg";
+import imageOne from "../../images/image-13.jpg";
 import imageTwo from "../../images/image 2.jpg";
 import imageThree from "../../images/image 3.jpg";
 import { Container, Row,Col } from "react-bootstrap";
@@ -18,23 +18,28 @@ const ControlledCarousel = () => {
   return (
     <div className="carousel-holder p-5">
       <Container>
-        <Row>
+        <Row className="carousel-header">
           <Col>
             <h1>well-minded</h1>
-            <Carousel activeIndex={index} onSelect={handleSelect}>
-              <Carousel.Item>
-                <Image src={imageOne} className="carousel-image" fluid />
-              </Carousel.Item>
-              <Carousel.Item>
-                <Image src={imageTwo} className="carousel-image" fluid />
-              </Carousel.Item>
-              <Carousel.Item>
-                <Image src={imageThree} className="carousel-image" fluid />
-              </Carousel.Item>
-            </Carousel>
           </Col>
         </Row>
       </Container>
+
+      <Row>
+        <Col>
+          <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item>
+              <Image src={imageOne} fluid />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image src={imageTwo} fluid />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image src={imageThree} fluid />
+            </Carousel.Item>
+          </Carousel>
+        </Col>
+      </Row>
     </div>
   );
 };
