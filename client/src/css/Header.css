@@ -1,47 +1,6 @@
-.header{
-  padding-bottom: 7rem;
+.nav-logo{
+  width:80px;
+  height:80px;
 }
 
-nav{
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-  background:rgb(195, 127, 18);
-  color:rgb(80, 75, 75);
-  margin-bottom: 5rem;
-}
 
-.navbar{
-  position: fixed;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  z-index: 1;
- margin-left: 0;
-}
-
-ul {
-width:50%;
-display:flex;
-justify-content: space-around;
-align-items: center;
-list-style: none;
-text-decoration: none;
-} 
-
-ul li a{
-color:rgb(27, 24, 24);
-font-size: 1.5rem;
-margin:5px;
-white-space:nowrap;
-}
-
-ul li a:hover{
-  color:rgb(146, 65, 62);
-  text-decoration: none;
-
-}
-.logo{
- width:5vw;
- border-radius: 50%;
-}
