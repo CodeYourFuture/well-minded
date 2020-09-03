@@ -13,6 +13,7 @@ import Contact from "../src/components/Contact/Contact";
 import AdminArea from "../src/components/Admin/AdminArea";
 
 function App() {
+
   const [resources, setResources] = useState([]);
   const [error, setError] = useState(null);
 
@@ -22,6 +23,37 @@ function App() {
       .then((data) => setResources(data))
       .catch(setError);
   }, []);
+  const [resources,setResources]=useState([])
+    const [organisations, setOrganisations] = useState([]);
+
+  const [error,setError]=useState(null)
+// Promise.all([
+//       fetch(`${domain}/api/resources/`).res.json()
+//       fetch(`${domain}/api/resources/`).res.json()
+//     ])
+//     .then(([ data1, data2 ]) => setResources(data))
+//     .catch(setError);
+const ResFetch = ()=>{
+  fetch(`${domain}/api/resources/`)
+  .then((res)=> res.json())
+  .then((data)=> setResources(data))
+}
+const OrgFetch = ()=>{
+  fetch(`${domain}/api/organisations/org`)
+  .then((res)=> res.json())
+  .then((data)=> setOrganisations(data))
+}
+useEffect(()=>{
+  ResFetch();
+  OrgFetch();
+},[])
+  // useEffect(()=>{
+  //   fetch(`${domain}/api/resources/`)
+  //     .then((res) => res.json())
+  //     .then((data) => setResources(data))
+  //     .catch(setError);
+  // },[])
+
 
   if (error) {
     return (
@@ -33,6 +65,7 @@ function App() {
   }
 
   return (
+
     
       <BrowserRouter>
         <div>
@@ -56,6 +89,32 @@ function App() {
           />
           <Route path="/login" component={Login} />
           <Route path="/contact" component={Contact} />
+
+    <BrowserRouter>
+      <div>
+        <Header />
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/organisations" component={Organisations} />
+        <Route
+          path="/resources"
+          render={(props) => <Resources {...props} resources={resources} />}
+        />
+        <Route
+          path="/AdminArea"
+          render={(props) => (
+            <AdminArea
+              {...props}
+              organisations={organisations}
+              setOrganisations={setOrganisations}
+              resources={resources}
+              setResources={setResources}
+            />
+          )}
+        />
+        <Route path="/login" component={Login} />
+        <Route path="/contact" component={Contact} />
+
 
           <Footer />
         </div>
