@@ -1,28 +1,29 @@
-.footer{
-  background-color:hsla(100, 9%, 7%, 0.87);
-}
-
-.footer-social {
-  display:flex;
-  justify-content: center;
-}
-
-.footer-link .nav-link{
-  text-decoration: none;
+footer{
+  margin-top:20px;
+  min-height: 10vh;
+  background:black;
   color:white;
-  opacity: 0.5;
-}
-.footer-link .nav-link:hover {
   
-  opacity: 1;
 }
-.footer-copyright{
-  color:white;
-  background-color:black;
+.footer-link{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+ 
+  padding-top: 20px;
 }
-.footer hr{
-  background-color:white;
-  width:70%;
-  margin:auto;
+.footer-link a {
+  color: white;
+  font-size: 1.5rem;
+
 }
 
+.footer-link a:hover {
+  color: yellow;
+  text-decoration: none;
+
+}
+.footer-text{
+  text-align:center;
+  
+}
