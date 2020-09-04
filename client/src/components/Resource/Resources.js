@@ -4,7 +4,7 @@ import InputResSearch from "../../components/Resource/InputResSearch";
 
 
 const Resources = ({resources}) => {
-  console.log(resources)
+  
   const [searchResource, setSearchResource] = useState("");
   
 const filteredData = resources
