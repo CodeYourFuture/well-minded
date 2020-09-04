@@ -18,12 +18,7 @@ function App() {
     const [organisations, setOrganisations] = useState([]);
 
   const [error,setError]=useState(null)
-// Promise.all([
-//       fetch(`${domain}/api/resources/`).res.json()
-//       fetch(`${domain}/api/resources/`).res.json()
-//     ])
-//     .then(([ data1, data2 ]) => setResources(data))
-//     .catch(setError);
+
 const ResFetch = ()=>{
   fetch(`${domain}/api/resources/`)
   .then((res)=> res.json())
@@ -38,12 +33,6 @@ useEffect(()=>{
   ResFetch();
   OrgFetch();
 },[])
-  // useEffect(()=>{
-  //   fetch(`${domain}/api/resources/`)
-  //     .then((res) => res.json())
-  //     .then((data) => setResources(data))
-  //     .catch(setError);
-  // },[])
 
    if (error) {
      return (
