@@ -11,8 +11,10 @@ import Footer from "../src/components/Footer";
 import Login from "../src/components/Admin/Login";
 import Contact from "../src/components/Contact/Contact";
 import AdminArea from "../src/components/Admin/AdminArea";
+import Blogs from "../src/components/Home/Blogs";
 
 function App() {
+
   const [resources, setResources] = useState([]);
   const [error, setError] = useState(null);
 
@@ -61,6 +63,7 @@ function App() {
         </div>
       </BrowserRouter>
     
+
   );
 }
 export default App;
