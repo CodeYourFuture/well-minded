@@ -1,6 +1,12 @@
+.carousel-holder{
+  background-color:white;
+  
+  
+}
 .carousel{
   margin-top: 50px;
-    box-shadow: 10px 10px 10px 10px grey;
+  box-shadow: 10px 10px 10px 30px hsl(35, 40%, 75%);
+  width:100%;
 }
 
 .carousel-indicators li {
@@ -18,3 +24,17 @@
 }
 
 
+.carousel-item{
+  background-color: hsl(35, 40%, 75%);
+  text-align:center;
+}
+
+.carousel-item img{
+min-width:80%;
+height: 500px;
+padding:30px;
+
+}
+.carousel-header{
+  color:black;
+}

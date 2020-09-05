@@ -11,10 +11,8 @@ import Footer from "../src/components/Footer";
 import Login from "../src/components/Admin/Login";
 import Contact from "../src/components/Contact/Contact";
 import AdminArea from "../src/components/Admin/AdminArea";
-import Blogs from "../src/components/Home/Blogs";
 
 function App() {
-
   const [resources, setResources] = useState([]);
   const [error, setError] = useState(null);
 
@@ -26,23 +24,20 @@ function App() {
   }, []);
   const [organisations, setOrganisations] = useState([]);
 
-
   const ResFetch = () => {
     fetch(`${domain}/api/resources/`)
       .then((res) => res.json())
-      .then((data) => setResources(data))
-  }
+      .then((data) => setResources(data));
+  };
   const OrgFetch = () => {
     fetch(`${domain}/api/organisations/org`)
       .then((res) => res.json())
-      .then((data) => setOrganisations(data))
-  }
+      .then((data) => setOrganisations(data));
+  };
   useEffect(() => {
     ResFetch();
     OrgFetch();
-  }, [])
-  
-
+  }, []);
 
   if (error) {
     return (
@@ -54,7 +49,6 @@ function App() {
   }
 
   return (
-
     <BrowserRouter>
       <div>
         <Header />
@@ -80,11 +74,9 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/contact" component={Contact} />
 
-
         <Footer />
       </div>
     </BrowserRouter>
-
   );
 }
 export default App;

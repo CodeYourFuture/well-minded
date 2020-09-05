@@ -1,11 +1,18 @@
 import React from "react";
 import ResourcesAdmin from "./ResourcesAdmin";
-import OrganisationAddForm from "./OrganisationAddForm";
+import OrganisationsAdmin from "./OrganisationsAdmin";
 
-const AdminArea = ({ resources, setResources }) => (
+
+const AdminArea = ({
+  resources,
+  setResources,
+  organisations,
+  setOrganisations,
+}) => (
   <div>
     <ResourcesAdmin resources={resources} setResources={setResources} />
-    <OrganisationAddForm />
+    <OrganisationsAdmin organisations={organisations} setOrganisations={setOrganisations} />
+
   </div>
 );
 
