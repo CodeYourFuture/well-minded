@@ -1,12 +1,26 @@
 import React from "react";
 import "../../css/Allresources.css";
+import ResourceEdRe from "./ResourceEdRe"
 
-const Allresources = ({ resource }) => {
+const Allresources = ({ 
+  resource,
+  removeResourceById,
+  updateResource,
+  isAdmin
+ }) => {
   return (
     <div className="container">
       <div className="card mb-2">
-        <h2  className="card-header">
-          {resource.name} 
+        <h2 className="card-header">
+          {resource.name}
+          <div className="float-right">
+            <ResourceEdRe
+              resource={resource}
+              removeResourceById={removeResourceById}
+              updateResource={updateResource}
+              isAdmin={isAdmin}
+            />
+          </div>
         </h2>
         <div className="card-body">
           <div>

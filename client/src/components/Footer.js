@@ -1,14 +1,14 @@
 import React from "react";
-
 import { SocialIcon } from "react-social-icons";
 import "../css/footer.css";
 import { Container, Row, Col, Nav } from "react-bootstrap";
-const Footer = () => {
+import {Link}from "react-router-dom"
+const Footer = ({isAdmin,logout}) => {
   return (
-     <div className="footer font-small pt-4 mt-4">
+    <div className="footer font-small pt-4 mt-4">
       <Container className="text-center text-md-left">
         <Row className="footer-link">
-          <Col >
+          <Col>
             <Nav as="ul">
               <Nav.Item as="li">
                 <Nav.Link href="/">Home</Nav.Link>
@@ -17,11 +17,23 @@ const Footer = () => {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col  className="d-flex flex-row-reverse">
+          <Col className="d-flex flex-row-reverse">
             <Nav as="ul" className="text-right">
               <Nav.Item as="li">
-                <Nav.Link href="/AdminArea">Admin</Nav.Link>
-                <Nav.Link href="/login">login</Nav.Link>
+                <Nav.Link>
+                  <Link to="/AdminArea">Admin</Link>
+                </Nav.Link>
+                <Nav.Link>
+                  {isAdmin ? (
+                    <Link
+                      onClick={() => {
+                        logout();
+                      }}
+                    > logout</Link>
+                  ) : (
+                    <Link to="/login">login</Link>
+                  )}
+                </Nav.Link>
                 <Nav.Link href="/contact">Contact Us</Nav.Link>
               </Nav.Item>
             </Nav>

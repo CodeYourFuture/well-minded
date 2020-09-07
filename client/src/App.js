@@ -14,7 +14,22 @@ import AdminArea from "../src/components/Admin/AdminArea";
 
 function App() {
   const [resources, setResources] = useState([]);
+  const [organisations, setOrganisations] = useState([]);
   const [error, setError] = useState(null);
+  const [isAdmin, setIsAdmin]=useState(false)
+
+  const logout =()=>{
+    setIsAdmin(false);
+    window.localStorage.removeItem("isAdmin");
+
+  }
+
+  useEffect(()=>{
+    const loginState=window.localStorage.getItem("isAdmin");
+    if (loginState){
+      setIsAdmin(loginState)
+    }
+  },[])
 
   useEffect(() => {
     fetch(`${domain}/api/resources/`)
@@ -22,20 +37,22 @@ function App() {
       .then((data) => setResources(data))
       .catch(setError);
   }, []);
-  const [organisations, setOrganisations] = useState([]);
+  
 
-  const ResFetch = () => {
-    fetch(`${domain}/api/resources/`)
-      .then((res) => res.json())
-      .then((data) => setResources(data));
-  };
+  // const ResFetch = () => {
+  //   fetch(`${domain}/api/resources/`)
+  //     .then((res) => res.json())
+  //     .then((data) => setResources(data));
+  // };
+
   const OrgFetch = () => {
     fetch(`${domain}/api/organisations/org`)
       .then((res) => res.json())
       .then((data) => setOrganisations(data));
   };
+
   useEffect(() => {
-    ResFetch();
+    // ResFetch();
     OrgFetch();
   }, []);
 
@@ -57,7 +74,14 @@ function App() {
         <Route path="/organisations" component={Organisations} />
         <Route
           path="/resources"
-          render={(props) => <Resources {...props} resources={resources} />}
+          render={(props) => (
+            <Resources
+              {...props}
+              resources={resources}
+              setResources={setResources}
+              isAdmin={isAdmin}
+            />
+          )}
         />
         <Route
           path="/AdminArea"
@@ -68,13 +92,17 @@ function App() {
               setOrganisations={setOrganisations}
               resources={resources}
               setResources={setResources}
+              isAdmin={isAdmin}
             />
           )}
         />
-        <Route path="/login" component={Login} />
+        <Route
+          path="/login"
+          render={(props) => <Login {...props} setIsAdmin={setIsAdmin} />}
+        />
         <Route path="/contact" component={Contact} />
 
-        <Footer />
+        <Footer isAdmin={isAdmin} logout={logout} />
       </div>
     </BrowserRouter>
   );
