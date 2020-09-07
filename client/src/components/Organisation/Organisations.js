@@ -8,7 +8,7 @@ const Organisations = () => {
       .then((res) => res.json())
       .then((data) => {
         setOrg(data);
-        console.log(data);
+        
       });
   }, []);
   const filteredOrgs = org.filter((data) =>
