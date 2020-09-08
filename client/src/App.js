@@ -16,43 +16,35 @@ function App() {
   const [resources, setResources] = useState([]);
   const [organisations, setOrganisations] = useState([]);
   const [error, setError] = useState(null);
-  const [isAdmin, setIsAdmin]=useState(false)
+  const [isAdmin, setIsAdmin] = useState(false);
 
-  const logout =()=>{
+  const logout = () => {
     setIsAdmin(false);
     window.localStorage.removeItem("isAdmin");
-
-  }
-
-  useEffect(()=>{
-    const loginState=window.localStorage.getItem("isAdmin");
-    if (loginState){
-      setIsAdmin(loginState)
-    }
-  },[])
-
-  useEffect(() => {
-    fetch(`${domain}/api/resources/`)
-      .then((res) => res.json())
-      .then((data) => setResources(data))
-      .catch(setError);
-  }, []);
+  };
   
 
-  // const ResFetch = () => {
-  //   fetch(`${domain}/api/resources/`)
-  //     .then((res) => res.json())
-  //     .then((data) => setResources(data));
-  // };
+  useEffect(() => {
+    const loginState = window.localStorage.getItem("isAdmin");
+    if (loginState) {
+      setIsAdmin(loginState);
+    }
+  }, []);
+
+  const ResFetch = () => {
+    fetch(`${domain}/api/resources/`)
+      .then( (res) => res.json())
+      .then((data) => setResources(data))
+  };
 
   const OrgFetch = () => {
     fetch(`${domain}/api/organisations/org`)
-      .then((res) => res.json())
+      .then( (res) =>res.json())
       .then((data) => setOrganisations(data));
   };
 
   useEffect(() => {
-    // ResFetch();
+    ResFetch();
     OrgFetch();
   }, []);
 
