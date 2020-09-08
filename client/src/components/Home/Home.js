@@ -1,12 +1,12 @@
 import React from "react";
-import Carousel from "../Home/Carousel";
+// import Carousel from "../Home/Carousel";
 import Cards from "../Home/Cards";
 import Info from "../Home/Info"
 
 const Home = () => {
   return (
     <main >
-      <Carousel/>
+      {/* <Carousel/> */}
       <Info/>
       <Cards/>
     </main>
