@@ -3,15 +3,25 @@
   width:80%;
   text-align: left;
   margin: auto;
-   margin-top: 1rem;
+  margin-top: 1em;
   font-weight: 500;
-  font-size: 18px;
-}
-.container {
-  text-align: center;
-  margin-top: 1rem;
-}
-.btn-charity{
-text-align: right;
+  
 }
 
+.btn-charity{
+display:flex;
+justify-content: flex-end;
+}
+
+.text-description{
+  
+  height: 30%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
+}
+.org-card-text{
+  height:30%;
+  overflow: hidden;
+}

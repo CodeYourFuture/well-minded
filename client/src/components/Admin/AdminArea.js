@@ -1,6 +1,6 @@
 import React from "react";
 // import ResourcesAdmin from "./ResourcesAdmin";
-import OrganisationsAdmin from "../Organisation/OrganisationsAdmin";
+// import OrganisationsAdmin from "../Organisation/OrganisationsAdmin";
 
 
 const AdminArea = ({
