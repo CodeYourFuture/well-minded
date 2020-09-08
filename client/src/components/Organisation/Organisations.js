@@ -30,7 +30,9 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
     <Container>
       <Row>
         <Col>
-          <h3 className="org-headline">Find an Organisation</h3>
+          <h2 className="org-headline text-center mt-3">
+            Find an Organisation
+          </h2>
           <Form.Control
             value={searchOrg}
             onChange={(e) => setSearchOrg(e.target.value)}
@@ -55,7 +57,6 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
               <Card className="border-2 org-text" key={organisation._id}>
                 <Card.Header as="h4">{organisation.name}</Card.Header>
                 <OrganisationsEditDelete
-                 
                   organisation={organisation}
                   removeOrganisationById={removeOrganisationById}
                   updateOrganisation={updateOrganisation}
@@ -65,13 +66,16 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
                   <Card.Text className="h-auto text-description">
                     {organisation.description}
                   </Card.Text>
-                  <Card.Text className="h-30 d-inline-block">
+                  <Card.Text className="org-card-text">
                     Location: {organisation.location}
                   </Card.Text>
+                  <Card.Link
+                    className="btn-charity"
+                    href={organisation.website}
+                  >
+                    <Button>View Charity</Button>
+                  </Card.Link>
                 </Card.Body>
-                <Card.Link className="btn-charity" href={organisation.website}>
-                  <Button>View Charity</Button>
-                </Card.Link>
               </Card>
             );
           })}
@@ -82,46 +86,3 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
 };
 export default Organisations;
 
-//   // const [org, setOrg] = useState([]);
-//   const [searchOrg, setSearchOrg] = useState([]);
-//   // useEffect(() => {
-//   //   fetch("https://staging-well-minded.herokuapp.com/api/organisations/org")
-//   //     .then((res) => res.json())
-//   //     .then((data) => {
-//   //       setOrg(data);
-//   //     });
-//   // }, []);
-//   const filteredOrgs = org.filter((data) =>
-//     data.name.toLowerCase().includes(searchOrg)
-//   );
-
-//   return (
-//     <div className="container">
-//       <input
-//         value={searchOrg}
-//         onChange={(e) => setSearchOrg(e.target.value)}
-//         className="input-name"
-//         type="search"
-//         name="from"
-//         placeholder="Search Organization"
-//       />
-
-//       {filteredOrgs.map((data, index) => {
-//         return (
-//           <div key={index}>
-//             <p className="org-text">{data.name}</p>
-//             <a href={data.website}>
-//               <img
-//                 className="org-img rounded mx-auto d-block img-responsive"
-//                 src={data.logo}
-//                 alt="Logo"
-//               />
-//             </a>
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// };
-
-// export default Organisations;
