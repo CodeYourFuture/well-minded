@@ -71,7 +71,17 @@ function App() {
         <Header />
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/organisations" component={Organisations} />
+        <Route
+          path="/organisations"
+          render={(props) => (
+            <Organisations
+              {...props}
+              organisations={organisations}
+              setOrganisations={setOrganisations}
+              isAdmin={isAdmin}
+            />
+          )}
+        />
         <Route
           path="/resources"
           render={(props) => (

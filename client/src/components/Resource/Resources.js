@@ -1,7 +1,7 @@
-import React ,{useState}from "react";
+import React, { useState } from "react";
 import Allresources from "./Allresources";
 import InputResSearch from "./InputResSearch";
-import ResourceAddForm from "./ResourceAddForm"
+import ResourceAddForm from "./ResourceAddForm";
 
 const Resources = ({ resources, setResources, isAdmin }) => {
   const [showAdd, setShowAdd] = useState(false);
@@ -23,12 +23,11 @@ const Resources = ({ resources, setResources, isAdmin }) => {
     );
   };
 
-  const filteredData = resources
-    .filter(
-      (resource) =>
-        resource.name.toLowerCase().includes(searchResource) ||
-        resource.description.toLowerCase().includes(searchResource)
-    );
+  const filteredData = resources.filter(
+    (resource) =>
+      resource.name.toLowerCase().includes(searchResource) ||
+      resource.description.toLowerCase().includes(searchResource)
+  );
   return (
     <div>
       <InputResSearch
@@ -36,7 +35,11 @@ const Resources = ({ resources, setResources, isAdmin }) => {
         setSearchResource={setSearchResource}
       />
       {isAdmin && (
-        <button onClick={() => {setShowAdd(true)}}>
+        <button
+          onClick={() => {
+            setShowAdd(true);
+          }}
+        >
           add resource
         </button>
       )}

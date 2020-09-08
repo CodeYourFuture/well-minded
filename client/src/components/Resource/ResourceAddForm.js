@@ -77,7 +77,7 @@ const ResourceAddForm = ({ addResource,setShowAdd }) => {
           add resource
         </button>
 
-        <button onClick={()=>{setShowAdd(false)}}>Cancle </button>
+        <button onClick={()=>{setShowAdd(false)}}>Cancel</button>
       </form>
       
     </div>
