@@ -17,6 +17,7 @@ function App() {
   const [organisations, setOrganisations] = useState([]);
   const [error, setError] = useState(null);
   const [isAdmin, setIsAdmin]=useState(false)
+  const [contactMessages, setContactMessages]=useState([])
 
   const logout =()=>{
     setIsAdmin(false);
@@ -56,6 +57,16 @@ function App() {
     OrgFetch();
   }, []);
 
+  useEffect(() => {
+    fetch(`${domain}/api/contact/messages`)
+      .then((res) => res.json())
+      .then((data) => setContactMessages(data))
+      .catch(setError);
+  }, []);
+  
+
+  
+
   if (error) {
     return (
       <div>
@@ -92,6 +103,8 @@ function App() {
               setOrganisations={setOrganisations}
               resources={resources}
               setResources={setResources}
+              contactMessages={contactMessages}
+              setContactMessages={setContactMessages}
               isAdmin={isAdmin}
             />
           )}
