@@ -1,6 +1,6 @@
 import React from "react";
 // import ResourcesAdmin from "./ResourcesAdmin";
-import OrganisationsAdmin from "./OrganisationsAdmin";
+import OrganisationsAdmin from "../Organisation/OrganisationsAdmin";
 
 
 const AdminArea = ({
@@ -16,7 +16,7 @@ const AdminArea = ({
     setResources={setResources} 
     isAdmin={isAdmin}
     /> */}
-    <OrganisationsAdmin organisations={organisations} setOrganisations={setOrganisations} />
+    {/* <OrganisationsAdmin organisations={organisations} setOrganisations={setOrganisations} /> */}
 
   </div>
 );
