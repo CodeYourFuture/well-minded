@@ -55,13 +55,18 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
           {filteredOrgs.map((organisation) => {
             return (
               <Card className="border-2 org-text" key={organisation._id}>
-                <Card.Header as="h4">{organisation.name}</Card.Header>
-                <OrganisationsEditDelete
-                  organisation={organisation}
-                  removeOrganisationById={removeOrganisationById}
-                  updateOrganisation={updateOrganisation}
-                  isAdmin={isAdmin}
-                />
+                <Card.Header as="h4">
+                  {organisation.name}
+                  <div className="float-right">
+                    <OrganisationsEditDelete
+                      organisation={organisation}
+                      removeOrganisationById={removeOrganisationById}
+                      updateOrganisation={updateOrganisation}
+                      isAdmin={isAdmin}
+                    />
+                  </div>
+                </Card.Header>
+
                 <Card.Body>
                   <Card.Text className="h-auto text-description">
                     {organisation.description}

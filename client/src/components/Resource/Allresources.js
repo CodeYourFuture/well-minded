@@ -1,6 +1,8 @@
 import React from "react";
-import "../../css/Allresources.css";
+import "../../css/Allresources.css"
 import ResourceEdRe from "./ResourceEdRe"
+import { Card,Button } from "react-bootstrap";
+
 
 const Allresources = ({ 
   resource,
@@ -9,31 +11,33 @@ const Allresources = ({
   isAdmin
  }) => {
   return (
-    <div className="container">
-      <div className="card mb-2">
-        <h2 className="card-header">
-          {resource.name}
-          <div className="float-right">
-            <ResourceEdRe
-              resource={resource}
-              removeResourceById={removeResourceById}
-              updateResource={updateResource}
-              isAdmin={isAdmin}
-            />
-          </div>
-        </h2>
-        <div className="card-body">
-          <div>
-            <p className="card-text">{resource.description}</p>
-          </div>
-          <div>
-            <a href={resource.website} className="btn btn-primary float-right">
-              Read more
-            </a>
-          </div>
+    <Card className="mb-3">
+      <Card.Header as="h4">
+        {resource.name}
+        <div className="float-right">
+          <ResourceEdRe
+            resource={resource}
+            removeResourceById={removeResourceById}
+            updateResource={updateResource}
+            isAdmin={isAdmin}
+          />
         </div>
-      </div>
-    </div>
+      </Card.Header>
+
+      <Card.Body>
+        <Card.Text className="resource-cardtxt">
+          {resource.description}
+        </Card.Text>
+        <Button
+          className="float-right"
+          size="sm"
+          href={resource.website}
+          variant="primary"
+        >
+          Read more
+        </Button>
+      </Card.Body>
+    </Card>
   );
 };
 
