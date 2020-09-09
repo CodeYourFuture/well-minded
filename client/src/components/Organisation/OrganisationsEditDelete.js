@@ -69,7 +69,7 @@ const OrganisationEditDelete = ({
       {isAdmin && (
         <>
           <Button
-            className="float-right flex-row-reverse"
+            className="mr-2"
             variant="primary"
             onClick={handleShow}
             // className="mr-2"
@@ -77,7 +77,7 @@ const OrganisationEditDelete = ({
             edit
           </Button>
           <Button
-            className="float-right"
+            
             variant="danger"
             onClick={handlerRemove}
           >
