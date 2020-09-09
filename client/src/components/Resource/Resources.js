@@ -2,10 +2,21 @@ import React, { useState } from "react";
 import Allresources from "./Allresources";
 import InputResSearch from "./InputResSearch";
 import ResourceAddForm from "./ResourceAddForm";
+import Pagination from "react-js-pagination";
+import "../../css/pagination.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Resources = ({ resources, setResources, isAdmin }) => {
   const [showAdd, setShowAdd] = useState(false);
   const [searchResource, setSearchResource] = useState("");
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostPerPage] = useState(5);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = resources.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = (number) => setCurrentPage(number);
+
 
   const addResource = (resource) => {
     setResources([resource, ...resources]);
@@ -23,7 +34,7 @@ const Resources = ({ resources, setResources, isAdmin }) => {
     );
   };
 
-  const filteredData = resources.filter(
+  const filteredData = currentPosts.filter(
     (resource) =>
       resource.name.toLowerCase().includes(searchResource) ||
       resource.description.toLowerCase().includes(searchResource)
@@ -61,6 +72,19 @@ const Resources = ({ resources, setResources, isAdmin }) => {
           isAdmin={isAdmin}
         />
       ))}
+      <div className="pagination">
+        <Pagination
+          activePage={currentPage}
+          itemsCountPerPage={postsPerPage}
+          totalItemsCount={resources.length}
+          pageRangeDisplayed={5}
+          onChange={paginate}
+          prevPageText="prev"
+          nextPageText="next"
+          firstPageText="first"
+          lastPageText="last"
+        />
+      </div>
     </div>
   );
 };
