@@ -15,16 +15,14 @@ const AdminArea = ({
   isAdmin,
 }) => (
     <div>
-      {isAdmin ? (<>   {/* <ResourcesAdmin 
-    resources={resources} 
-    setResources={setResources} 
-    isAdmin={isAdmin}
-    /> */}
-        {/* <OrganisationsAdmin organisations={organisations} setOrganisations={setOrganisations} /> */}
-        <Messages contactMessages={contactMessages}
-          setContactMessages={setContactMessages} /> </>) : (<> <p>You are not authorised </p> </>)}
-  
-  </div>
+      {isAdmin
+        ? (<>
+            <Messages contactMessages={contactMessages}
+              setContactMessages={setContactMessages} /> 
+          </>)
+        : (<> <p>You are not authorised </p> </>)}
+
+    </div>
   );
 
 export default AdminArea;

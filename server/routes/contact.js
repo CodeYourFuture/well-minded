@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 
 // /api/contact/messages
 router.get("/messages", (req, res) => {
-  Contact.find().then(contact => res.status(200).json(contact));
+  Contact.find().sort({ _id: -1 }).then(contact => res.status(200).json(contact));
 });
 
 // /api/contact

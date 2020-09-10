@@ -5,12 +5,13 @@ import {Container, Row, Col} from "react-bootstrap"
 
 const Messages = ({ contactMessages, setContactMessages, isAdmin }) => {
     const [showMessages, setShowMessages] = useState(false);
-  
+    const filterMessage = contactMessages.slice(0, 4)
+    const handleSHowMoreMessages = ()=>(console.log("hello"))
 return(
     <Container >
         <Row>
             <Col>
-        <Table responsive="sm">
+        <Table responsive bordered hover >
         <thead>
           <tr>
             
@@ -21,13 +22,14 @@ return(
           </tr>
         </thead>
        
-        {contactMessages.map(message => 
+        {filterMessage.map(message => 
         <tbody className="row-elements">
-        <Message message={message} />
+        <Message  message={message} />
         </tbody>
     )}
 
       </Table>
+      <button onClick={handleSHowMoreMessages}>Show more</button>
       </Col>
       </ Row>
     </ Container>
