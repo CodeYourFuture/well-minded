@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/header.css";
 import { Row, Col, Navbar, Nav, Image } from "react-bootstrap";
+import {Link} from "react-router-dom"
 
 import logo from "../images/newlogo.png";
 const Header = () => {
@@ -19,20 +20,24 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav>
                 <Nav.Item>
-                  <Nav.Link href="/">Home</Nav.Link>
+                  <Link to="/"> Home </Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="/About">About us</Nav.Link>
+                  <Link to="/About"> About us </Link>
+                  
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="/Organisations">Organisations</Nav.Link>
+                  <Link to="/Organisations"> Organisations </Link>
+                  
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Nav.Link href="/Resources">Resources</Nav.Link>
+                  <Link to="/Resources"> Resources </Link>
+                 
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link href="/AdminArea"></Nav.Link>
+                  <Link to="/AdminArea"> Admin </Link>
+                  
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>

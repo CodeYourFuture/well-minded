@@ -7,6 +7,7 @@ const OrganisationEditDelete = ({
   organisation,
   removeOrganisationById,
   updateOrganisation,
+  isAdmin,
 }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -65,12 +66,25 @@ const OrganisationEditDelete = ({
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow} className="mr-2">
-        edit
-      </Button>
-      <Button variant="danger" onClick={handlerRemove}>
-        remove
-      </Button>
+      {isAdmin && (
+        <>
+          <Button
+            className="mr-2"
+            variant="primary"
+            onClick={handleShow}
+            // className="mr-2"
+          >
+            edit
+          </Button>
+          <Button
+            
+            variant="danger"
+            onClick={handlerRemove}
+          >
+            remove
+          </Button>
+        </>
+      )}
       <Modal
         show={show}
         onHide={handleClose}

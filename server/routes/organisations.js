@@ -5,7 +5,7 @@ router.get("/", (req,res)=>{
   res.json({msg:"hello"})
 })
 router.get("/org", (req, res) => {
-  Org.find().then((org)=>{console.log(org); res.json(org)})
+  Org.find().then((org)=>{res.json(org)})
 });
 
 router.post("/org", (req, res) => {

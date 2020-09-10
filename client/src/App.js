@@ -16,44 +16,38 @@ function App() {
   const [resources, setResources] = useState([]);
   const [organisations, setOrganisations] = useState([]);
   const [error, setError] = useState(null);
+
   const [isAdmin, setIsAdmin]=useState(false)
   const [contactMessages, setContactMessages]=useState([])
 
-  const logout =()=>{
+
+  const logout = () => {
     setIsAdmin(false);
     window.localStorage.removeItem("isAdmin");
-
-  }
-
-  useEffect(()=>{
-    const loginState=window.localStorage.getItem("isAdmin");
-    if (loginState){
-      setIsAdmin(loginState)
-    }
-  },[])
-
-  useEffect(() => {
-    fetch(`${domain}/api/resources/`)
-      .then((res) => res.json())
-      .then((data) => setResources(data))
-      .catch(setError);
-  }, []);
+  };
   
 
-  // const ResFetch = () => {
-  //   fetch(`${domain}/api/resources/`)
-  //     .then((res) => res.json())
-  //     .then((data) => setResources(data));
-  // };
+  useEffect(() => {
+    const loginState = window.localStorage.getItem("isAdmin");
+    if (loginState) {
+      setIsAdmin(loginState);
+    }
+  }, []);
+
+  const ResFetch = () => {
+    fetch(`${domain}/api/resources/`)
+      .then( (res) => res.json())
+      .then((data) => setResources(data))
+  };
 
   const OrgFetch = () => {
     fetch(`${domain}/api/organisations/org`)
-      .then((res) => res.json())
+      .then( (res) =>res.json())
       .then((data) => setOrganisations(data));
   };
 
   useEffect(() => {
-    // ResFetch();
+    ResFetch();
     OrgFetch();
   }, []);
 
@@ -82,7 +76,17 @@ function App() {
         <Header />
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/organisations" component={Organisations} />
+        <Route
+          path="/organisations"
+          render={(props) => (
+            <Organisations
+              {...props}
+              organisations={organisations}
+              setOrganisations={setOrganisations}
+              isAdmin={isAdmin}
+            />
+          )}
+        />
         <Route
           path="/resources"
           render={(props) => (

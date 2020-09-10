@@ -1,16 +1,20 @@
 import React from "react";
+import { Form, InputGroup } from "react-bootstrap";
 
 function InputResSearch({ searchResource, setSearchResource }) {
   return (
-    <div className="container text-right mt-3 mb-3">
-      Search : <input
-        placeholder="Type here ...."
+    <InputGroup className=" p-3">
+      <InputGroup.Prepend>
+        <InputGroup.Text id="basic-addon1">Search </InputGroup.Text>
+      </InputGroup.Prepend>
+      <Form.Control
+        placeholder="search......"
         value={searchResource}
         onChange={(e) => {
           setSearchResource(e.target.value);
         }}
       />
-    </div>
+    </InputGroup>
   );
 }
 export default InputResSearch;

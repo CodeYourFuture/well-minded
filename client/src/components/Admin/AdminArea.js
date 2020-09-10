@@ -1,5 +1,6 @@
 import React from "react";
 // import ResourcesAdmin from "./ResourcesAdmin";
+
 import OrganisationsAdmin from "./OrganisationsAdmin";
 import Messages from "./ContactAdmin";
 
@@ -14,6 +15,7 @@ const AdminArea = ({
   setContactMessages,
   isAdmin,
 }) => (
+
     <div>
       {isAdmin
         ? (<>
@@ -21,6 +23,7 @@ const AdminArea = ({
               setContactMessages={setContactMessages} /> 
           </>)
         : (<> <p>You are not authorised </p> </>)}
+
 
     </div>
   );

@@ -11,30 +11,42 @@ const Footer = ({isAdmin,logout}) => {
           <Col>
             <Nav as="ul">
               <Nav.Item as="li">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/organisations">Organisations</Nav.Link>
-                <Nav.Link href="/resources">Resources</Nav.Link>
+                <Nav>
+                  <Link to="/">Home</Link>
+                </Nav>
+                <Nav>
+                  <Link to="/organisations">Organisations</Link>
+                </Nav>
+                <Nav>
+                  <Link to="/resources">Resources</Link>
+                </Nav>
+                
               </Nav.Item>
             </Nav>
           </Col>
           <Col className="d-flex flex-row-reverse">
             <Nav as="ul" className="text-right">
               <Nav.Item as="li">
-                <Nav.Link>
+                <Nav>
                   <Link to="/AdminArea">Admin</Link>
-                </Nav.Link>
-                <Nav.Link>
+                </Nav>
+                <Nav>
                   {isAdmin ? (
                     <Link
                       onClick={() => {
                         logout();
                       }}
-                    > logout</Link>
+                    >
+                      {" "}
+                      logout
+                    </Link>
                   ) : (
                     <Link to="/login">login</Link>
                   )}
-                </Nav.Link>
-                <Nav.Link href="/contact">Contact Us</Nav.Link>
+                </Nav>
+                <Nav>
+                  <Link to="/contact">Contact Us</Link>
+                </Nav>
               </Nav.Item>
             </Nav>
           </Col>

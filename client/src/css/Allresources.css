@@ -1,6 +1,8 @@
-.card-body{
-  height:250px;
+.resource-cardtxt{
+  height:3.5rem; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space:normal;
+   text-indent: 20%;
 }
-.card{
-  border-radius: 5px;
-}
+

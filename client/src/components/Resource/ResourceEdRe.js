@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import domain from "../../config";
-import Button from "react-bootstrap/Button";
+import { Button, FormControl,InputGroup,Form,Col,Row} from "react-bootstrap";
 
 const ResourceEdRe = ({ 
   resource, 
@@ -57,15 +57,10 @@ const ResourceEdRe = ({
     <div>
       {isAdmin && (
         <>
-          <Button 
-          variant="primary" 
-          onClick={handleShow} 
-          className="mr-2">
+          <Button variant="primary" onClick={handleShow} className="mr-2">
             edit
           </Button>
-          <Button 
-          variant="danger" 
-          onClick={handlerRemove}>
+          <Button variant="danger" onClick={handlerRemove}>
             remove
           </Button>
         </>
@@ -84,29 +79,41 @@ const ResourceEdRe = ({
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
-            <label>Name</label>
-            <input
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Title</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
               value={addName}
               onChange={(e) => {
                 setAddName(e.target.value);
               }}
             />
-            <label>description</label>
-            <input
-              value={addDescription}
-              onChange={(e) => {
-                setAddDescription(e.target.value);
-              }}
-            />
-            <label>Website</label>
-            <input
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Website link</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
               value={addWebsite}
               onChange={(e) => {
                 setAddWebsite(e.target.value);
               }}
             />
-          </form>
+          </InputGroup>
+          <InputGroup className=" mb-3">
+            <InputGroup.Text fluid>Description:</InputGroup.Text>
+
+            <FormControl
+              fluid
+              as="textarea"
+              rows="5"
+              value={addDescription}
+              onChange={(e) => {
+                setAddDescription(e.target.value);
+              }}
+            />
+          </InputGroup>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

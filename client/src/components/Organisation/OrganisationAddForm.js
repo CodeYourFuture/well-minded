@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import domain from "../../config";
 
-const OrganisationAddForm = () => {
+const OrganisationAddForm = ({setShowAdd}) => {
   const [logo, setLogo] = useState("");
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
@@ -17,7 +18,7 @@ const OrganisationAddForm = () => {
       location,
       description,
     });
-    fetch("http://localhost:5000/api/organisations/org", {
+    fetch(`${domain}/api/organisations/org`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -96,6 +97,13 @@ const OrganisationAddForm = () => {
 
         <button type="submit" className="btn btn-primary mt-3">
           Add Organisation
+        </button>
+        <button
+          onClick={() => {
+            setShowAdd(false);
+          }}
+        >
+          Cancel
         </button>
       </form>
     </div>

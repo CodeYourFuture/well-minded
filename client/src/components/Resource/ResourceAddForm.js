@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import domain from "../../config";
-import "../../css/AdminResources.css";
+// import "../../css/AdminResources.css";
+import { Form,Button,Col,Row } from "react-bootstrap";
 
-const ResourceAddForm = ({ addResource,setShowAdd }) => {
-  
+const ResourceAddForm = ({ addResource, setShowAdd }) => {
   const emptyResource = {
     name: "",
     description: "",
@@ -34,53 +34,78 @@ const ResourceAddForm = ({ addResource,setShowAdd }) => {
   };
 
   return (
-    <div className="mt-5 mb-5">
-      <form className="resources-form">
-        <h1> Add resources</h1>
-        <div className="form-group ">
-          <label>Name</label>
-
-          <input
-            className="form-control"
-            type="text"
-            name="name"
-            value={newResource.name}
-            onChange={handlerAddnewResource}
-          />
-        </div>
-        <div>
-          <label className="mt-2">Description</label>
-          <input
-            className="form-control"
-            type="text"
-            name="description"
-            value={newResource.description}
-            onChange={handlerAddnewResource}
-          />
-        </div>
-        <div>
-          <label className="mt-2">Website</label>
-          <input
-            className="form-control"
-            type="text"
-            name="website"
-            value={newResource.website}
-            onChange={handlerAddnewResource}
-          />
-        </div>
-
-        <button
-          onClick={handlerAddResourceSubmit}
-          type="submit"
-          className="btn btn-primary mt-3"
-        >
-          add resource
-        </button>
-
-        <button onClick={()=>{setShowAdd(false)}}>Cancle </button>
-      </form>
-      
-    </div>
+    <Form className="mt-3 mb-3 bg-secondary">
+      <Row className="p-3">
+        <Col>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              className="form-control"
+              type="text"
+              name="name"
+              value={newResource.name}
+              onChange={handlerAddnewResource}
+            />
+          </Form.Group>
+        </Col>
+        <Col>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Website</Form.Label>
+            <Form.Control
+              className="form-control"
+              type="text"
+              name="website"
+              value={newResource.website}
+              onChange={handlerAddnewResource}
+            />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row className="p-3">
+        <Col>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows="5"
+              className="form-control"
+              type="text"
+              name="description"
+              value={newResource.description}
+              onChange={handlerAddnewResource}
+            />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row className="p-3">
+        <Col>
+          <Button
+            onClick={handlerAddResourceSubmit}
+            type="submit"
+            className="text-center"
+            size="lg"
+            block
+          >
+            add resource
+          </Button>
+        </Col>
+      </Row>
+      <Row className="p-3">
+        <Col>
+          <Button
+            className="text-center"
+            block
+            size="lg"
+            onClick={() => {
+              setShowAdd(false);
+            }}
+            variant="info"
+          >
+            Cancel
+          </Button>
+        </Col>
+      </Row>
+    </Form>
   );
 };
 
