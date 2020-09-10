@@ -1,6 +1,9 @@
 import React from "react";
 // import ResourcesAdmin from "./ResourcesAdmin";
-// import OrganisationsAdmin from "../Organisation/OrganisationsAdmin";
+
+import OrganisationsAdmin from "./OrganisationsAdmin";
+import Messages from "./ContactAdmin";
+
 
 
 const AdminArea = ({
@@ -8,18 +11,22 @@ const AdminArea = ({
   setResources,
   organisations,
   setOrganisations,
+  contactMessages,
+  setContactMessages,
   isAdmin,
 }) => (
-  <div>
-    {/* <ResourcesAdmin 
-    resources={resources} 
-    setResources={setResources} 
-    isAdmin={isAdmin}
-    /> */}
-    {/* <OrganisationsAdmin organisations={organisations} setOrganisations={setOrganisations} /> */}
 
-  </div>
-);
+    <div>
+      {isAdmin
+        ? (<>
+            <Messages contactMessages={contactMessages}
+              setContactMessages={setContactMessages} /> 
+          </>)
+        : (<> <p>You are not authorised </p> </>)}
+
+
+    </div>
+  );
 
 export default AdminArea;
 
