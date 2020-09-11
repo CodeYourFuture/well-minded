@@ -3,7 +3,7 @@ import { Form, InputGroup } from "react-bootstrap";
 
 function InputResSearch({ searchResource, setSearchResource }) {
   return (
-    <InputGroup className=" p-3">
+    <InputGroup className="p-3">
       <InputGroup.Prepend>
         <InputGroup.Text id="basic-addon1">Search </InputGroup.Text>
       </InputGroup.Prepend>

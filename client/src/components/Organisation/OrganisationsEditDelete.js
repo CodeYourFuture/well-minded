@@ -72,7 +72,7 @@ const OrganisationEditDelete = ({
             className="mr-2"
             variant="primary"
             onClick={handleShow}
-            // className="mr-2"
+          
           >
             edit
           </Button>

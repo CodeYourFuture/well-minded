@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import domain from "../../config";
+import "../../css/organisationAddForm.css"
+import { Button, Col, Row, Form } from "react-bootstrap";
 
-const OrganisationAddForm = ({setShowAdd}) => {
+const OrganisationAddForm = ({ setShowAdd }) => {
   const [logo, setLogo] = useState("");
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
@@ -31,82 +33,163 @@ const OrganisationAddForm = ({setShowAdd}) => {
       });
   };
   return (
-    <div className="mt-5 mb-5">
-      <form onSubmit={handleAddNewOrg} className="resources-form">
-        <h1> Add Organisation</h1>
-        <div className="form-group ">
-          <label>Logo</label>
-          <input
-            className="form-control"
-            type="text"
-            name="name"
-            value={logo}
-            onChange={(e) => setLogo(e.target.value)}
-          />
-        </div>
-        <div className="form-group ">
-          <label>Name</label>
-          <input
-            className="form-control"
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label className="mt-2">Category</label>
-          <input
-            className="form-control"
-            type="text"
-            name="category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          />
-        </div>
-        <div>
-          <label className="mt-2">Website</label>
-          <input
-            className="form-control"
-            type="text"
-            name="website"
-            value={website}
-            onChange={(e) => setWebsite(e.target.value)}
-          />
-        </div>
-        <div>
-          <label className="mt-2">Location</label>
-          <input
-            className="form-control"
-            type="text"
-            name="location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        </div>
-        <div>
-          <label className="mt-2">Description</label>
-          <input
-            className="form-control"
-            type="text"
-            name="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </div>
-
-        <button type="submit" className="btn btn-primary mt-3">
+    
+      <Form className="org-add-form "onSubmit={handleAddNewOrg}>
+        <h4 className="text-center mt-3" > Add Organisations</h4>
+        <Form.Row className="m-3">
+          <Col>
+            <Form.Control
+              type="text"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Name"
+            />
+          </Col>
+          <Col>
+            <Form.Control
+              type="text"
+              name="location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              placeholder="Location"
+            />
+          </Col>
+        </Form.Row>
+        <Form.Row className="m-3">
+          <Col>
+          <Form.Control
+              className="org-add-form-description"
+              type="text"
+              name="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Description"
+            />
+          </Col>
+        </Form.Row>
+        <Form.Row className="m-3">
+          <Col>
+            <Form.Control
+              type="text"
+              name="website"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              placeholder="Website"
+            />
+          </Col>
+          <Col>
+            <Form.Control
+              type="text"
+              name="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              placeholder="Category"
+            />
+          </Col>
+        </Form.Row>
+        <Form.Row className="m-3 org-add-form-logo">
+          <Col>
+            <Form.Control
+              type="text"
+              name="logo"
+              value={logo}
+              onChange={(e) => setLogo(e.target.value)}
+              placeholder="Logo"
+            />
+          </Col>
+        </Form.Row>
+        <Button className="mt-2 mb-1 add-form-btn" variant="outline-primary">
           Add Organisation
-        </button>
-        <button
+        </Button>
+        <Button
+        className="m-3 add-form-btn"
           onClick={() => {
             setShowAdd(false);
           }}
+          variant="outline-danger"
         >
           Cancel
-        </button>
-      </form>
-    </div>
+        </Button>
+      </Form>
+    
+
+    // <div className="mt-5 mb-5">
+    //   <form onSubmit={handleAddNewOrg} className="resources-form">
+    //     <h1> Add Organisation</h1>
+    //     <div className="form-group ">
+    //       <label>Logo</label>
+    //       <input
+    //         className="form-control"
+    //         type="text"
+    //         name="name"
+    //         value={logo}
+    //         onChange={(e) => setLogo(e.target.value)}
+    //       />
+    //     </div>
+    //     <div className="form-group ">
+    //       <label>Name</label>
+    //       <input
+    //         className="form-control"
+    //         type="text"
+    //         name="name"
+    //         value={name}
+    //         onChange={(e) => setName(e.target.value)}
+    //       />
+    //     </div>
+    //     <div>
+    //       <label className="mt-2">Category</label>
+    //       <input
+    //         className="form-control"
+    //         type="text"
+    //         name="category"
+    //         value={category}
+    //         onChange={(e) => setCategory(e.target.value)}
+    //       />
+    //     </div>
+    //     <div>
+    //       <label className="mt-2">Website</label>
+    //       <input
+    //         className="form-control"
+    //         type="text"
+    //         name="website"
+    //         value={website}
+    //         onChange={(e) => setWebsite(e.target.value)}
+    //       />
+    //     </div>
+    //     <div>
+    //       <label className="mt-2">Location</label>
+    //       <input
+    //         className="form-control"
+    //         type="text"
+    //         name="location"
+    //         value={location}
+    //         onChange={(e) => setLocation(e.target.value)}
+    //       />
+    //     </div>
+    //     <div>
+    //       <label className="mt-2">Description</label>
+    //       <input
+    //         className="form-control"
+    //         type="text"
+    //         name="description"
+    //         value={description}
+    //         onChange={(e) => setDescription(e.target.value)}
+    //       />
+    //     </div>
+
+    //     <button type="submit" className="btn btn-primary mt-3">
+    //       Add Organisation
+    //     </button>
+    //     <button
+    //       onClick={() => {
+    //         setShowAdd(false);
+    //       }}
+    //     >
+    //       Cancel
+    //     </button>
+    //   </form>
+    // </div>
   );
 };
 export default OrganisationAddForm;

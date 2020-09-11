@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import { Card, Container, Button, Row, Col, Form } from "react-bootstrap";
 import OrganisationAddForm from "./OrganisationAddForm";
 import OrganisationsEditDelete from "./OrganisationsEditDelete";
+import Pagination from "react-js-pagination";
 import "../../css/Organisation.css";
 
 const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
   const [showAdd, setShowAdd] = useState(false);
   const [searchOrg, setSearchOrg] = useState([]);
+
+   const [currentPage, setCurrentPage] = useState(1);
+   const [postsPerPage, setPostPerPage] = useState(5);
+   const indexOfLastPost = currentPage * postsPerPage;
+   const indexOfFirstPost = indexOfLastPost - postsPerPage;
+   const currentPosts = organisations.slice(indexOfFirstPost, indexOfLastPost);
+   const paginate = (number) => setCurrentPage(number);
+
   const removeOrganisationById = (id) => {
     setOrganisations(organisations.filter(({ _id }) => _id !== id));
   };
@@ -36,13 +45,14 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
           <Form.Control
             value={searchOrg}
             onChange={(e) => setSearchOrg(e.target.value)}
-            className="input-name mr-2"
+            className="p-3"
             type="search"
             name="from"
             placeholder="Search Organization"
           />
           {isAdmin && (
             <Button
+              className="mt-2"
               variant="primary"
               onClick={() => {
                 setShowAdd(true);
@@ -55,9 +65,9 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
           {filteredOrgs.map((organisation) => {
             return (
               <Card className="border-2 org-text" key={organisation._id}>
-                <Card.Header as="h4">
+                <Card.Header className="org-card-header">
                   {organisation.name}
-                  <div className="float-right">
+                  <div className="float-right edit-delete-btn">
                     <OrganisationsEditDelete
                       organisation={organisation}
                       removeOrganisationById={removeOrganisationById}
@@ -84,6 +94,19 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
               </Card>
             );
           })}
+          <div className="pagination">
+            <Pagination
+              activePage={currentPage}
+              itemsCountPerPage={postsPerPage}
+              totalItemsCount={organisations.length}
+              pageRangeDisplayed={5}
+              onChange={paginate}
+              prevPageText="prev"
+              nextPageText="next"
+              firstPageText="first"
+              lastPageText="last"
+            />
+          </div>
         </Col>
       </Row>
     </Container>
