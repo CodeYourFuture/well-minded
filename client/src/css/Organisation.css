@@ -1,26 +1,32 @@
-
 .org-text {
-  width:80%;
   text-align: left;
   margin: auto;
   margin-top: 1em;
   font-weight: 500;
-  
 }
-
-.btn-charity{
-display:flex;
-justify-content: flex-end;
+.org-headline {
+  font-size: 1.5rem;
 }
-
-.text-description{
+.btn-charity {
+  display: flex;
+  justify-content: flex-end;
+}
+.org-card-header {
+  font-size: 1.2rem;
+}
+.text-description {
   height: 30%;
+  font-size: 1.2rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  
 }
-.org-card-text{
-  height:30%;
+.org-card-text {
+  font-size: 1.2rem;
+  height: 30%;
   overflow: hidden;
+}
+.entry-text {
+  width: 75%;
+  margin: auto;
 }

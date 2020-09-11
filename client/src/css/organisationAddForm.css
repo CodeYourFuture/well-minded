@@ -1,0 +1,13 @@
+.org-add-form{
+   background-color: lightgrey;
+}
+.org-add-form-description{
+    height:40%;
+}
+.add-form-btn{
+    width:25%;
+    align-self: center;
+}
+.org-add-form-logo{
+    width:20%;
+}
