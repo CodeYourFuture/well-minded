@@ -53,7 +53,7 @@ const Contact = () => {
 
 
   return (
-    <div className="container">
+    <div className="container contact">
       <h1 className="text-center"> Contact Us </h1>
       <p>
         If you have any suggestions or just want to contact us, please complete

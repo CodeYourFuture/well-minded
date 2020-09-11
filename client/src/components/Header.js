@@ -20,24 +20,18 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav>
                 <Nav.Item>
-                  <Link to="/"> Home </Link>
+                  <Link  to="/"> Home </Link>
                 </Nav.Item>
+                
                 <Nav.Item>
-                  <Link to="/About"> About us </Link>
-                  
-                </Nav.Item>
-                <Nav.Item>
-                  <Link to="/Organisations"> Organisations </Link>
-                  
+                  <Link to="/organisations"> Organisations </Link>
                 </Nav.Item>
 
                 <Nav.Item>
-                  <Link to="/Resources"> Resources </Link>
-                 
+                  <Link to="/resources"> Resources </Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/AdminArea"> Admin </Link>
-                  
+                  <Link to="/adminArea"> Admin </Link>
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>

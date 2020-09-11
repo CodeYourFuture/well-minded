@@ -12,7 +12,7 @@ const Footer = ({isAdmin,logout}) => {
             <Nav as="ul">
               <Nav.Item as="li">
                 <Nav>
-                  <Link to="/">Home</Link>
+                  <Link  to="/">Home</Link>
                 </Nav>
                 <Nav>
                   <Link to="/organisations">Organisations</Link>
@@ -20,7 +20,6 @@ const Footer = ({isAdmin,logout}) => {
                 <Nav>
                   <Link to="/resources">Resources</Link>
                 </Nav>
-                
               </Nav.Item>
             </Nav>
           </Col>
@@ -28,18 +27,14 @@ const Footer = ({isAdmin,logout}) => {
             <Nav as="ul" className="text-right">
               <Nav.Item as="li">
                 <Nav>
-                  <Link to="/AdminArea">Admin</Link>
-                </Nav>
-                <Nav>
                   {isAdmin ? (
-                    <Link
+                    <a
                       onClick={() => {
                         logout();
                       }}
                     >
-                      {" "}
                       logout
-                    </Link>
+                    </a>
                   ) : (
                     <Link to="/login">login</Link>
                   )}
