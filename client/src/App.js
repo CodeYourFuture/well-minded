@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import domain from "./config";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route,Switch } from "react-router-dom";
 import Header from "../src/components/Header";
 import Home from "../src/components/Home/Home";
 import About from "../src/components/About/About";
@@ -16,10 +16,9 @@ function App() {
   const [resources, setResources] = useState([]);
   const [organisations, setOrganisations] = useState([]);
   const [error, setError] = useState(null);
-
   const [isAdmin, setIsAdmin]=useState(false)
   const [contactMessages, setContactMessages]=useState([])
-
+  const [loading, setLoading] = useState(false);
 
   const logout = () => {
     setIsAdmin(false);
@@ -36,45 +35,63 @@ function App() {
 
   const ResFetch = () => {
     fetch(`${domain}/api/resources/`)
-      .then( (res) => res.json())
-      .then((data) => setResources(data))
+      .then((res) => res.json())
+      .then((data) => {
+        setResources(data)
+        setLoading(false);
+
+      })
+      .catch((err) => {
+        setError(err);
+      });
   };
 
   const OrgFetch = () => {
     fetch(`${domain}/api/organisations/org`)
       .then( (res) =>res.json())
-      .then((data) => setOrganisations(data));
+      .then((data) => {
+        setOrganisations(data)
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err);
+      });
   };
+  const ContactFetch=()=>{
+    fetch(`${domain}/api/contact/messages`)
+      .then((res) => res.json())
+      .then((data) => {
+        setContactMessages(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  }
 
   useEffect(() => {
     ResFetch();
     OrgFetch();
+    ContactFetch();
   }, []);
 
-  useEffect(() => {
-    fetch(`${domain}/api/contact/messages`)
-      .then((res) => res.json())
-      .then((data) => setContactMessages(data))
-      .catch(setError);
-  }, []);
-  
-
-  
 
   if (error) {
     return (
-      <div>
-        <h2>Error</h2>
-        {error.message}
+      <div className="font-weight-bolder text-danger text-center ">
+        something wrong {error.message}
       </div>
     );
+  }else if(loading){
+     return <h1>Loading</h1>;
   }
+
 
   return (
     <BrowserRouter>
-      <div>
-        <Header />
-        <Route path="/" exact component={Home} />
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route
           path="/organisations"
@@ -101,7 +118,7 @@ function App() {
         <Route
           path="/AdminArea"
           render={(props) => (
-            <AdminArea
+          <AdminArea
               {...props}
               organisations={organisations}
               setOrganisations={setOrganisations}
@@ -111,6 +128,7 @@ function App() {
               setContactMessages={setContactMessages}
               isAdmin={isAdmin}
             />
+
           )}
         />
         <Route
@@ -118,9 +136,9 @@ function App() {
           render={(props) => <Login {...props} setIsAdmin={setIsAdmin} />}
         />
         <Route path="/contact" component={Contact} />
+      </Switch>
 
-        <Footer isAdmin={isAdmin} logout={logout} />
-      </div>
+      <Footer isAdmin={isAdmin} logout={logout} />
     </BrowserRouter>
   );
 }
