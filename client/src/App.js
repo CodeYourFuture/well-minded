@@ -89,7 +89,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header isAdmin={isAdmin} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
@@ -118,7 +118,7 @@ function App() {
         <Route
           path="/AdminArea"
           render={(props) => (
-          <AdminArea
+            <AdminArea
               {...props}
               organisations={organisations}
               setOrganisations={setOrganisations}
@@ -128,7 +128,6 @@ function App() {
               setContactMessages={setContactMessages}
               isAdmin={isAdmin}
             />
-
           )}
         />
         <Route

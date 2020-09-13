@@ -4,12 +4,9 @@
   margin:0;
   padding:0;
   font-size: 1.2rem;
-  font-family: 'Roboto',
-  sans-serif;
+  font-family: 'Roboto',sans-serif;
   }
 
-
 .admin-area,.login,.contact{
-  height:60vh;
-  
-}
+  height:65vh;
+  }
