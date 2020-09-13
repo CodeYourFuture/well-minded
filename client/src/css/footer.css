@@ -1,5 +1,5 @@
 .footer{
-  background-color:hsla(100, 9%, 7%, 0.87);
+  background-color:#274c77;
 }
 
 .footer-social {
@@ -20,11 +20,16 @@
 }
 .footer-copyright{
   color:white;
-  background-color:black;
+  background-color:#274c77;
 }
 .footer hr{
   background-color:white;
   width:70%;
   margin:auto;
+}
+
+.footer-footlink p a{
+  color:white;
+  text-decoration: none;
 }
 

@@ -7,6 +7,11 @@
   font-family: 'Roboto',sans-serif;
   }
 
-.admin-area,.login,.contact{
+.login{
   height:65vh;
   }
+.btn-nextlink{
+  
+    background: #e43f6f !important;
+    
+}

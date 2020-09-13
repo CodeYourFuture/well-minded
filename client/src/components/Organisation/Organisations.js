@@ -8,13 +8,12 @@ import "../../css/Organisation.css";
 const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
   const [showAdd, setShowAdd] = useState(false);
   const [searchOrg, setSearchOrg] = useState([]);
-
-   const [currentPage, setCurrentPage] = useState(1);
-   const [postsPerPage, setPostPerPage] = useState(5);
-   const indexOfLastPost = currentPage * postsPerPage;
-   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-   const currentPosts = organisations.slice(indexOfFirstPost, indexOfLastPost);
-   const paginate = (number) => setCurrentPage(number);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostPerPage] = useState(5);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = organisations.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = (number) => setCurrentPage(number);
 
   const removeOrganisationById = (id) => {
     setOrganisations(organisations.filter(({ _id }) => _id !== id));
@@ -29,7 +28,7 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
       )
     );
   };
-  const filteredOrgs = organisations.filter(
+  const filteredOrgs = currentPosts.filter(
     (organisation) =>
       organisation.name.toLowerCase().includes(searchOrg) ||
       organisation.category.includes(searchOrg)
@@ -88,7 +87,7 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
                     className="btn-charity"
                     href={organisation.website}
                   >
-                    <Button>View Charity</Button>
+                    <Button className="btn-nextlink">View Charity</Button>
                   </Card.Link>
                 </Card.Body>
               </Card>
@@ -101,10 +100,10 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
               totalItemsCount={organisations.length}
               pageRangeDisplayed={5}
               onChange={paginate}
-              prevPageText="prev"
-              nextPageText="next"
-              firstPageText="first"
-              lastPageText="last"
+              prevPageText="Prev"
+              nextPageText="Next"
+              firstPageText="First"
+              lastPageText="Last"
             />
           </div>
         </Col>

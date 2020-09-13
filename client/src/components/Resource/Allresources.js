@@ -29,12 +29,11 @@ const Allresources = ({
           {resource.description}
         </Card.Text>
         <Button
-          className="float-right"
+          className="btn-nextlink float-right"
           size="sm"
           href={resource.website}
-          variant="primary"
         >
-          Read more
+          Visit Website
         </Button>
       </Card.Body>
     </Card>

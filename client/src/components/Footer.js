@@ -8,7 +8,7 @@ const Footer = ({ isAdmin, logout }) => {
     <>
       {/* // <Container className="footer font-small pt-4 mt-4 text-center" style={{width:"100%"}}> */}
       <Row className=" footer font-small pt-4 mt-4 text-center footer-link text-center">
-        <Col className="text-center">
+        <Col className="text-center footer-footlink">
           <p>
             <Link to="/">Home</Link>
           </p>
@@ -19,16 +19,16 @@ const Footer = ({ isAdmin, logout }) => {
             <Link to="/resources">Resources</Link>
           </p>
         </Col>
-        <Col className="text-center">
+        <Col className="text-center footer-footlink">
           <p>
             {isAdmin ? (
-              <a
+              <Link
                 onClick={() => {
                   logout();
                 }}
               >
                 logout
-              </a>
+              </Link>
             ) : (
               <Link to="/login">login</Link>
             )}
@@ -36,14 +36,15 @@ const Footer = ({ isAdmin, logout }) => {
           <p>
             <Link to="/contact">Contact Us</Link>
           </p>
-          <p> <SocialIcon url="http://twitter.com" />
-          <SocialIcon className="ml-2 mr-2" url="http://facebook.com" />
-          <SocialIcon className="mr-2" url="http://google.com" />
-          <SocialIcon url="http://linkedin.com" />
+          <p>
+            {" "}
+            <SocialIcon url="http://twitter.com" />
+            <SocialIcon className="ml-2 mr-2" url="http://facebook.com" />
+            <SocialIcon className="mr-2" url="http://google.com" />
+            <SocialIcon url="http://linkedin.com" />
           </p>
         </Col>
       </Row>
-      
 
       <Row className="footer footer-copyright font-small text-center p-2">
         <Col>
