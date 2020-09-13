@@ -1,5 +1,4 @@
 import React from "react";
-// import ResourcesAdmin from "./ResourcesAdmin";
 import Messages from "./ContactAdmin";
 
 
@@ -14,7 +13,7 @@ const AdminArea = ({
   isAdmin,
 }) => (
 
-    <div>
+    <div className="admin-area">
       {isAdmin
         ? (<>
             <Messages contactMessages={contactMessages}
