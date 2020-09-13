@@ -89,7 +89,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header isAdmin={isAdmin} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
