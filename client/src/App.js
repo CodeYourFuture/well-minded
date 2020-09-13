@@ -118,7 +118,7 @@ function App() {
         <Route
           path="/AdminArea"
           render={(props) => (
-          <AdminArea
+            <AdminArea
               {...props}
               organisations={organisations}
               setOrganisations={setOrganisations}
@@ -128,7 +128,6 @@ function App() {
               setContactMessages={setContactMessages}
               isAdmin={isAdmin}
             />
-
           )}
         />
         <Route

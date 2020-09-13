@@ -6,13 +6,13 @@
 }
 
 .pagination>.active>a {
-  background-color: #335d2d;
-  border-color: #335d2d;
+  background-color: #f56476;
+  border-color: #f56476;
   color: #fff;
 }
 
 .pagination>li>a {
-  border: 1px solid #335d2d;
+  border: 1px solid #E43f6f;
   padding: 5px 10px;
   outline: none;
   cursor: pointer;
@@ -24,14 +24,14 @@
 .pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
-  background-color: #335d2d;
-  border-color: #335d2d;
+  background-color: #E43f6f;
+  border-color: #E43f6f;
   outline: none;
 }
 
 .pagination>li>a,
 .pagination>li>span {
-  color: #335d2d
+  color: black;
 }
 
 .pagination>li:first-child>a,

@@ -1,34 +1,37 @@
 import React from "react";
 import "../css/header.css";
-import { Row, Col, Navbar, Nav, Image } from "react-bootstrap";
+import { Container,Row, Col, Navbar, Nav, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import logo from "../images/newlogo.png";
+import logo from "../images/logo2.png";
 const Header = ({ isAdmin }) => {
   return (
-    <conatiner className="header">
+    
       <Row>
-        <Col>
+        <Col style={{ paddingRight: 0 }}>
           <Navbar
             variant="dark"
             expand="md"
             sticky="top"
             className="header-nav"
           >
-            <Image className="nav-logo" src={logo} roundedCircle />
+            <Link to="/">
+              <Image className="nav-logo" src={logo} roundedCircle />
+            </Link>
+
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav>
-                <Nav.Item>
-                  <Link to="/"> Home </Link>
-                </Nav.Item>
-
                 <Nav.Item>
                   <Link to="/organisations"> Organisations </Link>
                 </Nav.Item>
 
                 <Nav.Item>
                   <Link to="/resources"> Resources </Link>
+                </Nav.Item>
+                <Nav.Item>
+                  
+                  <Link to="/contact">Contact Us</Link>
                 </Nav.Item>
                 <Nav.Item>
                   {isAdmin && <Link to="/adminArea"> Admin </Link>}
@@ -38,7 +41,7 @@ const Header = ({ isAdmin }) => {
           </Navbar>
         </Col>
       </Row>
-    </conatiner>
+    
   );
 };
 export default Header;

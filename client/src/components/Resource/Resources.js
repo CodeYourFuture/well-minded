@@ -86,10 +86,10 @@ const Resources = ({ resources, setResources, isAdmin }) => {
               totalItemsCount={resources.length}
               pageRangeDisplayed={5}
               onChange={paginate}
-              prevPageText="prev"
-              nextPageText="next"
-              firstPageText="first"
-              lastPageText="last"
+              prevPageText="Prev"
+              nextPageText="Next"
+              firstPageText="First"
+              lastPageText="Last"
             />
           </div>
         </Col>

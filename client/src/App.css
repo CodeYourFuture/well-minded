@@ -4,12 +4,17 @@
   margin:0;
   padding:0;
   font-size: 1.2rem;
-  font-family: 'Roboto',
-  sans-serif;
+  font-family: 'Roboto',sans-serif;
   }
 
 
-.admin-area,.login {
-  height:60vh;
+.login{
+  height:65vh;
+  }
+.btn-nextlink{
+
+
   
+    background: #e43f6f !important;
+    
 }
