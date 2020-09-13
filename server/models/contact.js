@@ -17,6 +17,10 @@ const ContactSchema = new Schema({
   "comment": {
     type: String,
     required: true,
+  },
+  "date":{
+    type: Date,
+    default: Date.now
   }
 });
 module.exports = Contact = mongoose.model("contact", ContactSchema);

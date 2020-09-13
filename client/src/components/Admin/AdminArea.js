@@ -1,6 +1,6 @@
 import React from "react";
 import Messages from "./ContactAdmin";
-
+import { Container, Row, Col } from "react-bootstrap"
 
 
 const AdminArea = ({
@@ -13,16 +13,18 @@ const AdminArea = ({
   isAdmin,
 }) => (
 
-    <div className="admin-area">
-      {isAdmin
-        ? (<>
-            <Messages contactMessages={contactMessages}
-              setContactMessages={setContactMessages} /> 
-          </>)
-        : (<> <p>You are not authorised </p> </>)}
-
-
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          {isAdmin
+            ? (<>
+              <Messages contactMessages={contactMessages}
+                setContactMessages={setContactMessages} />
+            </>)
+            : (<> <p>You are not authorised </p> </>)}
+        </Col>
+      </Row>
+    </Container>
   );
 
 export default AdminArea;

@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 
 // /api/contact/messages
 router.get("/messages", (req, res) => {
-  Contact.find().sort({ _id: -1 }).then(contact => res.status(200).json(contact));
+  Contact.find().then(contact => res.status(200).json(contact));
 });
 
 // /api/contact
@@ -18,7 +18,8 @@ router.post("/", (req, res) => {
     name: req.body.name,
     email: req.body.email,
     website: req.body.website,
-    comment: req.body.comment
+    comment: req.body.comment,
+    date: Date.now()
   });
 
   contact
