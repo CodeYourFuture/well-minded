@@ -18,7 +18,8 @@ router.post("/", (req, res) => {
     name: req.body.name,
     email: req.body.email,
     website: req.body.website,
-    comment: req.body.comment
+    comment: req.body.comment,
+    date: Date.now()
   });
 
   contact

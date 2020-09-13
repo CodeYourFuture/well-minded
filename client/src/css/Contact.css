@@ -1,9 +1,11 @@
-form {
-    display: flex;
-    flex-direction: column;
-}
 
 .contact-form {
-    padding: 20px;
+    background-color: lightgray;
 }
 
+.asterisk{
+    color:red;
+  }
+  .contact-form{
+      background-color: lightgray;
+  }

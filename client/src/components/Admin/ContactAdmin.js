@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Table from 'react-bootstrap/Table'
 import Message from "./Message"
 import Pagination from "react-js-pagination";
-import "../../css/pagination.css";
+import "../../css/pagination.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap"
 
@@ -14,7 +14,8 @@ const Messages = ({ contactMessages, setContactMessages, isAdmin }) => {
     const [postsPerPage, setPostPerPage] = useState(5);
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = contactMessages.slice(indexOfFirstPost, indexOfLastPost);
+    const sortedMessages = contactMessages.slice().sort((a, b) => b.date - a.date).reverse()
+    const currentPosts = sortedMessages.slice(indexOfFirstPost, indexOfLastPost);
     const paginate = (number) => setCurrentPage(number);
     
 
@@ -23,7 +24,7 @@ const Messages = ({ contactMessages, setContactMessages, isAdmin }) => {
         <Container >
             <Row>
                 <Col>
-                    <Table responsive bordered hover >
+                    <Table responsive bordered hover className="mt-5" >
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -33,14 +34,15 @@ const Messages = ({ contactMessages, setContactMessages, isAdmin }) => {
                             </tr>
                         </thead>
 
-                        {filterMessage.sort((a, b) => b.date - a.date).map(message =>
+                        {currentPosts.map(message =>
                             <tbody className="row-elements">
                                 <Message message={message} />
                             </tbody>
                         )}
 
-                    
-                    <div className="pagination">
+               
+                    </Table>
+                    <div className="pagination text-centre">
                     <Pagination
                         activePage={currentPage}
                         itemsCountPerPage={postsPerPage}
@@ -53,8 +55,6 @@ const Messages = ({ contactMessages, setContactMessages, isAdmin }) => {
                         lastPageText="last"
                     />
                     </div>
-               
-                    </Table>
                     </Col>
             </ Row>
         </ Container>

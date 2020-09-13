@@ -38,5 +38,124 @@
     "website": "https://www.haveringmind.org.uk/",
     "location": "Harrow Lodge House, Hornchurch Road, Hornchurch, RM11 1JU",
     "description": "Our mission is to provide advice and support to empower anyone experiencing a mental health problem, we provide services, raise awareness and promote understanding."
+  },
+  {
+    "name": "The Listening Place",
+    "category": "Befriending",
+    "website": "https://listeningplace.org.uk/",
+    "location": "The Listening Place 3 Meade Mews London SW1P 4EG",
+    "description": "Face-to-face support for those who feel life is no longer worth living."
+  },
+  {
+    "name": "The Caravan",
+    "category": "Counselling",
+    "website": "http://www.thecaravan.org.uk/",
+    "location": "St. James's Church,197 Piccadilly, London W1J 9LL",
+    "description": "The drop-in offers a core service of listening and emotional support, which can – by arrangement – evolve into counselling."
+  },
+  {
+    "name": "Fresh Start",
+    "category": "Housing",
+    "website": "http://www.freshstarthousing.co.uk/",
+    "location": "250 York Road London SW11 3SJ",
+    "description": "We provide housing for the those with urgent housing needs."
+  },
+  {
+    "name": "The Dragon Cafe",
+    "category": "Crisis Cafe",
+    "website": "https://dragoncafe.co.uk/",
+    "location": "Crypt of St George the Martyr Church, Borough High St, SE1 1JA",
+    "description": "The Dragon Café is the flagship project of Mental Fight Club. A relaxing café and imaginative space, open to all"
+  },
+  {
+    "name": "Hestia Recovery Cafe",
+    "category": "Crisis Cafe",
+    "website": "https://www.hestia.org/news/hestia-launches-recovery-cafe",
+    "location": "996 Garratt Ln, Tooting, London SW17 0RQ",
+    "description": "Hestia's Recovery Cafe is a safe and supportive space for people with mental health needs who are experiencing mental health crisis. "
+  },
+  {
+    "name": "Sunshine Recovery Cafe",
+    "category": "Crisis Cafe",
+    "website": "http://www.sunshinerecoverycafe.org/",
+    "location": "296a Kingston Road London SW20 8LX",
+    "description": "The Sunshine Recovery Café is open to adult residents of South West London (18+) who perceive themselves, or are at risk of moving into mental health crisis.  "
+  },
+  {
+    "name": "Samaritans",
+    "category": "Helpline",
+    "website": "https://www.samaritans.org/",
+    "location": "Nationwide",
+    "description": "Every seven seconds, Samaritans answer a call for help. We’re here, day or night, for anyone who’s struggling to cope, who needs someone to listen without judgement or pressure."
+  },
+  {
+    "name": "Support Line",
+    "category": "Helpline",
+    "website": "https://www.supportline.org.uk/",
+    "location": "Nationwide",
+    "description": "We offer confidential emotional support to children, young adults and adults by telephone, email and post."
+  },
+  {
+    "name": "Calm",
+    "category": "Helpline",
+    "website": "https://www.thecalmzone.net/",
+    "location": "Nationwide",
+    "description": "The Campaign Against Living Miserably (CALM) is leading a movement against suicide."
+  },
+  {
+    "name": "No Panic",
+    "category": "Helpline",
+    "website": "https://nopanic.org.uk/",
+    "location": "Nationwide",
+    "description": "No Panic offers advice, support, recovery programs and help for people living with phobias, OCD and any other anxiety-based disorders."
+  },
+  {
+    "name": "Sane",
+    "category": "Helpline",
+    "website": "http://www.sane.org.uk",
+    "location": "Nationwide",
+    "description": "We work to improve the quality of life for anyone affected by mental illness."
+  },
+  {
+    "name": "Rethink",
+    "category": "Helpline",
+    "website": "https://www.rethink.org/",
+    "location": "Nationwide",
+    "description": "Our vision is for equality, rights, the fair treatment and maximum quality of life for all those affected by mental illness, their carers, family and friends. "
+  },
+  {
+    "name": "National Helpline",
+    "category": "Helpline, Domestic Abuse",
+    "website": "https://www.nationaldahelpline.org.uk/",
+    "location": "Nationwide",
+    "description": "Are you experiencing domestic abuse? You are not alone."
+  },
+  {
+    "name": "Papyrus",
+    "category": "Suicide prevention",
+    "website": "https://www.papyrus-uk.org/",
+    "location": "Lineva House, 28-32 Milner Street, Warrington, Cheshire, WA5 1AD ",
+    "description": "PAPYRUS is the national charity dedicated to the prevention of young suicide."
+  },
+  {
+    "name": "Child Line",
+    "category": "Helpline",
+    "website": "https://www.childline.org.uk/",
+    "location": "Nationwide",
+    "description": "Childline is yours – a free, private and confidential service where you can talk about anything."
+  },
+  {
+    "name": "Turning Point",
+    "category": "Addiction",
+    "website": "https://www.turning-point.co.uk/",
+    "location": "Standon House 21 Mansell Street London E1 8AA ",
+    "description": "We work with people who need our support with their drug and alcohol use, mental health, offending behaviour, unemployment issues and people with a learning disability. "
+  },
+  {
+    "name": "Addaction",
+    "category": "Addiction",
+    "website": "https://www.wearewithyou.org.uk/",
+    "location": "Nationwide",
+    "description": "We provide free, confidential support to people experiencing issues with drugs, alcohol or mental health."
   }
 ]
