@@ -34,3 +34,7 @@ code {
 body {
   width: 100% !important;
 }
+
+.home-page, .login, .contact {
+  min-height: 68vh;
+}

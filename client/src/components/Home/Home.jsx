@@ -9,7 +9,7 @@ import "../../css/cards.css";
 const Home = () => {
   return (
     <>
-      <Container>
+      <Container className="home-page">
         <Row>
           <Col>
             <Entry />
@@ -23,12 +23,13 @@ const Home = () => {
             <ViewResourcesButton />
           </Col>
         </Row>
-      </Container>
-      <Row >
+        <Row >
         <Col>
           <Cards />
         </Col>
       </Row>
+      </Container>
+      
     </>
   );
 };
