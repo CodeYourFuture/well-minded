@@ -1,8 +1,17 @@
-.resource-cardtxt{
-  height:3.5rem; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  white-space:normal;
-   text-indent: 20%;
+.resource-cardtxt {
+  /* height: 3.5rem;
+   overflow: hidden; */
+  /* text-overflow: ellipsis;
+  white-space: normal;
+  text-indent: 20%; */
 }
 
+.load-more-btn {
+  background-color: aqua;
+  color: white;
+}
+
+
+.load-more-btn :hover {
+  cursor: pointer;
+}

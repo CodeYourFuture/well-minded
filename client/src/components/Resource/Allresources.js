@@ -1,15 +1,20 @@
-import React from "react";
-import "../../css/Allresources.css"
-import ResourceEdRe from "./ResourceEdRe"
-import { Card,Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import "../../css/Allresources.css";
+import ResourceEdRe from "./ResourceEdRe";
+import { Card, Button } from "react-bootstrap";
 
-
-const Allresources = ({ 
+const Allresources = ({
   resource,
   removeResourceById,
   updateResource,
-  isAdmin
- }) => {
+  isAdmin,
+}) => {
+  const [desc, setDesc] = useState("");
+
+  useEffect(() => {
+    resource.name && setDesc(resource.description.substr(0, 150));
+  }, []);
+
   return (
     <Card className="mb-3">
       <Card.Header as="h4">
@@ -26,7 +31,15 @@ const Allresources = ({
 
       <Card.Body>
         <Card.Text className="resource-cardtxt">
-          {resource.description}
+          {desc}{" "}
+          <span
+            className="load-more-btn"
+            onClick={() => {
+              setDesc(resource.description);
+            }}
+          >
+            load more{" "}
+          </span>
         </Card.Text>
         <Button
           className="btn-nextlink float-right"

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const OrganisationHelpButton = () => {
   return (
-    <Button className="help-btn" variant="outline-primary mt-4 mb-4">
+    <Button variant="outline-primary mt-4 mb-4 mr-3">
       <Link to="/organisations"> Find Organisation to help </Link>
     </Button>
   );

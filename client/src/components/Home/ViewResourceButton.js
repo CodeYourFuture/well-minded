@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ViewResourcesButton = () => {
   return (
-    <Button className="help-btn" variant="outline-primary mt-4 mb-4">
+    <Button variant="outline-primary mt-4 mb-4 ml-3">
       <Link to="/resources"> View More Resources </Link>
     </Button>
   );
