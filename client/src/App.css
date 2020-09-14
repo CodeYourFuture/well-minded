@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 * {
   box-sizing: border-box;
@@ -11,21 +11,15 @@
 .home-page,
 .login,
 .contact {
-  min-height:68vh;
+  min-height:70vh;
 }
-
-
 .btn-nextlink {
   background: #e43f6f !important;
 }
-
-
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 body {
   width: 100% !important;
 }

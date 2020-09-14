@@ -1,0 +1,24 @@
+.home-page .home-btn{
+  background: hotpink;
+}
+.home-page .home-btn a{
+  background: hotpink;
+  text-decoration: none;
+  color:white;
+}
+.org-btn{
+  border: 1px solid hotpink;
+  border-radius: 3px;
+  padding:10px;
+  color:white;
+  background:hotpink;
+  
+}
+.org-btn {
+  border: 1px solid hotpink;
+  border-radius: 3px;
+  padding: 10px;
+  color: white;
+  background: hotpink;
+
+}
