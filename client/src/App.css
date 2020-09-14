@@ -8,10 +8,12 @@
   font-family: 'Inter', sans-serif;
 }
 
-
-.login {
-  height: 65vh;
+.home-page,
+.login,
+.contact {
+  min-height:68vh;
 }
+
 
 .btn-nextlink {
   background: #e43f6f !important;
