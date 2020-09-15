@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Messages from "./ContactAdmin";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import ResourceAddForm from "../Resource/ResourceAddForm";
+import OrganisationAddForm from "../Organisation/OrganisationAddForm";
 
 const AdminArea = ({
   resources,
@@ -44,6 +45,18 @@ const AdminArea = ({
                   addResource={addResource}
                 />
               )}
+            </Col>
+            <Col>
+              <Button
+                className="btn-nextlink"
+                onClick={() => {
+                  setShowAdd(true);
+                }}
+              >
+                add organisation
+              </Button>
+
+              {showAdd && <OrganisationAddForm setShowAdd={setShowAdd} />}
             </Col>
           </Row>
           <Row>
