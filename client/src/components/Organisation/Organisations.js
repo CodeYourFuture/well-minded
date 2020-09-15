@@ -3,6 +3,7 @@ import { Card, Container, Button, Row, Col, Form } from "react-bootstrap";
 import OrganisationAddForm from "./OrganisationAddForm";
 import OrganisationsEditDelete from "./OrganisationsEditDelete";
 import Pagination from "react-js-pagination";
+import "../../css/Allresources.css";
 import "../../css/Organisation.css";
 
 const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
@@ -83,12 +84,12 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
                   <Card.Text className="org-card-text">
                     Location: {organisation.location}
                   </Card.Text>
-                  <Card.Link
-                    className="btn-charity"
+                  <a
+                    className="btn-nextlink float-right"
                     href={organisation.website}
                   >
-                    <Button className="btn-nextlink">View Charity</Button>
-                  </Card.Link>
+                    Visit Charity
+                  </a>
                 </Card.Body>
               </Card>
             );
@@ -112,4 +113,3 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
   );
 };
 export default Organisations;
-
