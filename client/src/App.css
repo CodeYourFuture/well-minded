@@ -1,20 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 * {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-size: 1.2rem;
-  font-family: 'Roboto',sans-serif;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.0rem;
+  font-family: 'Inter', sans-serif;
+}
 
-
-.login{
-  height:65vh;
-  }
-.btn-nextlink{
-
-
-  
-    background: #e43f6f !important;
-    
+.home-page,
+.login,
+.contact {
+  min-height:66vh;
+}
+.btn-nextlink {
+  background: #e43f6f !important;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+body {
+  width: 100% !important;
 }

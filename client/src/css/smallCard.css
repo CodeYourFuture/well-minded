@@ -1,17 +1,17 @@
 .small-card{
   border:none;
   border-radius:0;
-  height: 25rem;
+  height: 15rem;
 }
 .small-card .card-img-top{
-height: 17rem;
+height: 10rem;
 width: 100%;
 object-fit:cover;
 
 }
 .small-card .card-link{
   text-decoration: none;
-  color:black;
+  color:#e43f6f;
   opacity: 1;
   font-weight: bolder;
 }

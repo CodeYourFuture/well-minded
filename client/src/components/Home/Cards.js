@@ -1,16 +1,22 @@
 import React from "react";
 import SmallCard from "./SmallCard";
-import "../../css/cards.css";
 import imageSix from "../../images/image 6.jpg";
 import imageFive from "../../images/image 5.jpg";
 import imageFour from "../../images/image 4.jpeg";
-import {Container,Row,Col} from 'react-bootstrap'
+import { Container, Row, Col } from "react-bootstrap";
+
 const Cards = () => {
+  const colClassess = {
+    lg: 3,
+    xl: 3,
+    md: 4,
+    sm: 12,
+  };
   return (
-    <section className="small-cards-holder p-5 mb-5">
-      <Container>
-        <Row className="d-flex">
-          <Col lg ="4">
+    
+      <Container className=" p-5 mb-5">
+        <Row className="d-flex justify-content-center">
+          <Col {...colClassess}>
             <SmallCard
               src={imageSix}
               alt="Card image cap"
@@ -18,7 +24,7 @@ const Cards = () => {
               linkcap="Mental health during pandemic"
             />
           </Col>
-          <Col lg="4">
+          <Col {...colClassess}>
             <SmallCard
               src={imageFive}
               alt="Card image cap"
@@ -26,7 +32,7 @@ const Cards = () => {
               linkcap="Mental Health Blogs"
             />
           </Col>
-          <Col lg="4">
+          <Col {...colClassess}>
             <SmallCard
               src={imageFour}
               alt="Card image cap"
@@ -36,7 +42,7 @@ const Cards = () => {
           </Col>
         </Row>
       </Container>
-    </section>
+   
   );
 };
 
