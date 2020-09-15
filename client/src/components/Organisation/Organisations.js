@@ -48,7 +48,7 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
             className="p-3"
             type="search"
             name="from"
-            placeholder="Search Organization"
+            placeholder="Search Organisation"
           />
           {isAdmin && (
             <Button
@@ -65,7 +65,7 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
           {filteredOrgs.map((organisation) => {
             return (
               <Card className="border-2 org-text" key={organisation._id}>
-                <Card.Header className="org-card-header">
+                <Card.Header className="text-header">
                   {organisation.name}
                   <div className="float-right edit-delete-btn">
                     <OrganisationsEditDelete
@@ -81,8 +81,8 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
                   <Card.Text className="h-auto text-description">
                     {organisation.description}
                   </Card.Text>
-                  <Card.Text className="org-card-text">
-                    Location: {organisation.location}
+                  <Card.Text className="text-location">
+                    <span className="location">Location: </span>{organisation.location}
                   </Card.Text>
                   <a
                     className="btn-nextlink float-right"

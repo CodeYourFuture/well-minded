@@ -11,19 +11,21 @@
   display: flex;
   justify-content: flex-end;
 }
-.org-card-header {
-  font-size: 1.2rem;
+.text-header {
+  font-size: 18px;
 }
 .text-description {
   height: 30%;
-  font-size: 1.2rem;
+  font-size: 18px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.org-card-text {
-  font-size: 1.2rem;
+.text-location {
+  font-size: 15px;
   height: 30%;
   overflow: hidden;
 }
-
+.location{
+  font-weight: 600;
+}

@@ -33,9 +33,8 @@ const OrganisationAddForm = ({ setShowAdd }) => {
       });
   };
   return (
-    <Form className="org-add-form " onSubmit={handleAddNewOrg}>
-      <h4 className="text-center mt-3"> Add Organisations</h4>
-      <Form.Row className="m-3">
+    <Form className="p-3 org-add-form " onSubmit={handleAddNewOrg}>
+      <Form.Row className="p-3">
         <Col>
           <Form.Control
             type="text"
@@ -55,11 +54,12 @@ const OrganisationAddForm = ({ setShowAdd }) => {
           />
         </Col>
       </Form.Row>
-      <Form.Row className="m-3">
+      <Form.Row className="p-3">
         <Col>
           <Form.Control
             className="org-add-form-description"
-            type="text"
+            as="textarea"
+            rows="4"
             name="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -67,7 +67,7 @@ const OrganisationAddForm = ({ setShowAdd }) => {
           />
         </Col>
       </Form.Row>
-      <Form.Row className="m-3">
+      <Form.Row className="p-3">
         <Col>
           <Form.Control
             type="text"
@@ -87,7 +87,7 @@ const OrganisationAddForm = ({ setShowAdd }) => {
           />
         </Col>
       </Form.Row>
-      <Form.Row className="m-3 org-add-form-logo">
+      <Form.Row className="p-3 org-add-form-logo">
         <Col>
           <Form.Control
             type="text"
@@ -98,18 +98,26 @@ const OrganisationAddForm = ({ setShowAdd }) => {
           />
         </Col>
       </Form.Row>
-      <Button className="mt-2 mb-1 add-form-btn" variant="outline-primary">
-        Add Organisation
-      </Button>
-      <Button
-        className="m-3 add-form-btn"
-        onClick={() => {
-          setShowAdd(false);
-        }}
-        variant="outline-danger"
-      >
-        Cancel
-      </Button>
+      <Form.Row className="p-3 justify-content-center">
+        <Col>
+          <Button className="add-form-btn" variant="primary" size="lg" block>
+            Add Organisation
+          </Button>
+        </Col>
+        <Col>
+          <Button
+            className="add-form-btn"
+            variant="secondary"
+            size="lg"
+            block
+            onClick={() => {
+              setShowAdd(false);
+            }}
+          >
+            Cancel
+          </Button>
+        </Col>
+      </Form.Row>
     </Form>
   );
 };
