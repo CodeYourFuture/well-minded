@@ -17,7 +17,7 @@ const Allresources = ({
 
   return (
     <Card className="mb-3">
-      <Card.Header>
+      <Card.Header  className="res-cardheader">
         <div className="float-right">
           <ResourceEdRe
             resource={resource}
