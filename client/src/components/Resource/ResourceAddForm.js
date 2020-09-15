@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import domain from "../../config";
-// import "../../css/AdminResources.css";
 import { Form,Button,Col,Row } from "react-bootstrap";
+import "../../css/addresourceform.css"
 
 const ResourceAddForm = ({ addResource, setShowAdd }) => {
   const emptyResource = {
@@ -34,11 +34,15 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
   };
 
   return (
-    <Form className="mt-3 mb-3 bg-secondary">
+    <Form className="mt-3 mb-3 resource-form p-5">
       <Row className="p-3">
         <Col>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Title</Form.Label>
+            <Form.Label>
+              Comment <span className="asterisk">*</span>
+            </Form.Label>
+
             <Form.Control
               className="form-control"
               type="text"
@@ -51,6 +55,10 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
         <Col>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Website</Form.Label>
+            <Form.Label>
+              Comment <span className="asterisk">*</span>
+            </Form.Label>
+
             <Form.Control
               className="form-control"
               type="text"
@@ -63,8 +71,12 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
       </Row>
       <Row className="p-3">
         <Col>
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group>
             <Form.Label>Description</Form.Label>
+            <Form.Label>
+              Comment <span className="asterisk">*</span>
+            </Form.Label>
+
             <Form.Control
               as="textarea"
               rows="5"
@@ -89,8 +101,6 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
             add resource
           </Button>
         </Col>
-      </Row>
-      <Row className="p-3">
         <Col>
           <Button
             className="text-center"
@@ -99,7 +109,7 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
             onClick={() => {
               setShowAdd(false);
             }}
-            variant="info"
+            variant="secondary"
           >
             Cancel
           </Button>

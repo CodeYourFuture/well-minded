@@ -1,9 +1,5 @@
-.resource-cardtxt {
-  /* height: 3.5rem;
-   overflow: hidden; */
-  /* text-overflow: ellipsis;
-  white-space: normal;
-  text-indent: 20%; */
+.resource-cardtxt{
+  font-size: 18px;
 }
 
 .load-more-btn {
