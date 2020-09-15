@@ -2,7 +2,6 @@ import React from "react";
 import "../css/header.css";
 import { Container, Row, Col, Navbar, Nav, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 import logo from "../images/logo2.png";
 const Header = ({ isAdmin }) => {
   return (
@@ -11,6 +10,7 @@ const Header = ({ isAdmin }) => {
         style={{
           paddingRight: 0,
         }}
+        
       >
         <Navbar variant="dark" expand="md" sticky="top" className="header-nav">
           <Link to="/">
@@ -20,10 +20,9 @@ const Header = ({ isAdmin }) => {
             logo
           }
           roundedCircle /> }  */}
-            <i className="material-icons">
-              Well Minded 
-            </i>
+            <i className="material-icons">Well Minded</i>
           </Link>
+          
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -31,15 +30,13 @@ const Header = ({ isAdmin }) => {
               <Nav.Item>
                 <Link to="/organisations"> Organisations </Link>
               </Nav.Item>
-
               <Nav.Item>
-                <Link to="/resources"> Resources </Link>{" "}
+                <Link to="/resources"> Resources </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/contact"> Contact Us </Link>{" "}
+                <Link to="/contact"> Contact Us </Link>
               </Nav.Item>
               <Nav.Item>
-                {" "}
                 {isAdmin && <Link to="/adminArea"> Admin </Link>}
               </Nav.Item>
             </Nav>
