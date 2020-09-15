@@ -18,7 +18,7 @@ const Allresources = ({
   return (
     <Card className="mb-3">
       <Card.Header>
-        <div className="float-right">
+        <div className="text-center">
           <ResourceEdRe
             resource={resource}
             removeResourceById={removeResourceById}

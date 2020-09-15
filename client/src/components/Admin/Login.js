@@ -7,7 +7,7 @@ const Login = ({ setIsAdmin }) => {
   const [loginError, setLoginError] = useState(null);
 
   const [superAdmin, setSuperAdmin] = useState({
-    email: "admin@email.com",
+    email: "minko@email.com",
     password: "12345",
   });
   const [admin, setAdmin] = useState({
