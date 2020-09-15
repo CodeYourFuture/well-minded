@@ -1,5 +1,5 @@
 .resource-cardtxt{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .load-more-btn {
@@ -10,4 +10,7 @@
 
 .load-more-btn :hover {
   cursor: pointer;
+}
+.res-cardheader{
+  font-size: 18px;
 }

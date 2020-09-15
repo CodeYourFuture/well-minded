@@ -39,10 +39,8 @@ const Resources = ({ resources, setResources, isAdmin }) => {
   return (
     <Container>
       <Row>
-        <Col>
-          <h2 className="org-headline text-center mt-3">
-            Find an Resource
-          </h2>
+        <Col className="text-center">
+          <h3 className="mt-3">Find an resource</h3>
         </Col>
       </Row>
       <Row>
@@ -55,7 +53,6 @@ const Resources = ({ resources, setResources, isAdmin }) => {
       </Row>
       <Row>
         <Col>
-          
           {filteredData.map((resource) => (
             <Allresources
               key={resource._id}

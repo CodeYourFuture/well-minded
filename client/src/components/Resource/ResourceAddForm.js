@@ -40,7 +40,7 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Title</Form.Label>
             <Form.Label>
-              Comment <span className="asterisk">*</span>
+              <span className="asterisk">*</span>
             </Form.Label>
 
             <Form.Control
@@ -56,7 +56,7 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Website</Form.Label>
             <Form.Label>
-              Comment <span className="asterisk">*</span>
+            <span className="asterisk">*</span>
             </Form.Label>
 
             <Form.Control
@@ -74,7 +74,7 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
           <Form.Group>
             <Form.Label>Description</Form.Label>
             <Form.Label>
-              Comment <span className="asterisk">*</span>
+              <span className="asterisk">*</span>
             </Form.Label>
 
             <Form.Control
