@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../css/Allresources.css";
 import ResourceEdRe from "./ResourceEdRe";
-import { Card, Button } from "react-bootstrap";
+import { Card,Col } from "react-bootstrap";
 
 const Allresources = ({
   resource,
@@ -17,9 +17,8 @@ const Allresources = ({
 
   return (
     <Card className="mb-3">
-      <Card.Header as="h4">
-        {resource.name}
-        <div className="float-right">
+      <Card.Header>
+        <div className="text-center">
           <ResourceEdRe
             resource={resource}
             removeResourceById={removeResourceById}
@@ -27,11 +26,12 @@ const Allresources = ({
             isAdmin={isAdmin}
           />
         </div>
+        {resource.name}
       </Card.Header>
 
       <Card.Body>
         <Card.Text className="resource-cardtxt">
-          {desc}{" "}
+          {desc}
           <span
             className="load-more-btn"
             onClick={() => {
@@ -41,13 +41,9 @@ const Allresources = ({
             load more{" "}
           </span>
         </Card.Text>
-        <Button
-          className="btn-nextlink float-right"
-          size="sm"
-          href={resource.website}
-        >
+        <a className="btn-nextlink float-right" href={resource.website}>
           Visit Website
-        </Button>
+        </a>
       </Card.Body>
     </Card>
   );
