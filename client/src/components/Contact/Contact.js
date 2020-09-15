@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../css/Contact.css";
-import { Form, Button } from "react-bootstrap";
+import { Form, Col, Row, Container } from "react-bootstrap";
 const Contact = () => {
   const [newContact, setNewContact] = useState({
     name: "",
@@ -35,15 +35,26 @@ const Contact = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="container contact">
-      <h1 className="text-center"> Contact Us </h1>
-      <p>
-        If you have any suggestions or just want to contact us, please complete
-        this form
-      </p>
-      <Form className="text-centre contact-form p-3">
+    <Container className="contact">
+      <Row>
+        <Col className="text-center">
+          <h1 className="mt-3">Contact Us</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="text-center">
+          <p className="text-align-center">
+            If you have any suggestions or just want to contact us, please
+            complete this form
+          </p>
+        </Col>
+      </Row>
+
+      <Form className="text-centre contact-form p-5">
         <Form.Group>
-          <Form.Label>Name <span className="asterisk">*</span></Form.Label>
+          <Form.Label>
+            Name <span className="asterisk">*</span>
+          </Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter name"
@@ -54,7 +65,9 @@ const Contact = () => {
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Email <span className="asterisk">*</span></Form.Label>
+          <Form.Label>
+            Email <span className="asterisk">*</span>
+          </Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -76,7 +89,9 @@ const Contact = () => {
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label>Comment <span className="asterisk">*</span></Form.Label>
+          <Form.Label>
+            Comment <span className="asterisk">*</span>
+          </Form.Label>
           <Form.Control
             row="5"
             as="textarea"
@@ -86,11 +101,15 @@ const Contact = () => {
             onChange={handleContact}
           />
         </Form.Group>
-        <Button type="submit" onClick={handleSubmit}>
+        <Form.Label
+          className="btn-nextlink float-right"
+          onClick={handleSubmit}
+          type="submit"
+        >
           Submit
-      </Button>
+        </Form.Label>
       </Form>
-    </div>
+    </Container>
   );
 };
 export default Contact;
