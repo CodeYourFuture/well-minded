@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import "../../css/Contact.css";
 import { Form, Button } from "react-bootstrap";
+import domain from "../../config"
 const Contact = () => {
+  const [formErrors, setFormErrors] = useState({
+      name: null,
+      email: null,
+      website: null,
+      comment: null,
+    
+  })
   const [newContact, setNewContact] = useState({
     name: "",
     email: "",
@@ -17,7 +25,13 @@ const Contact = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/api/contact", {
+    if( newContact.name === "" ){
+      setFormErrors({
+        ...formErrors, name: "name cant be empty"
+      })
+      return;
+    }
+    fetch(domain+ "/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,6 +66,7 @@ const Contact = () => {
             id="name"
             onChange={handleContact}
           />
+          { formErrors.name && <div className="text-white bg-danger mt-1"> { formErrors.name } </div> }
         </Form.Group>
         <Form.Group>
           <Form.Label>Email <span className="asterisk">*</span></Form.Label>
