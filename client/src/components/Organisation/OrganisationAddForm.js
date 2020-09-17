@@ -3,7 +3,7 @@ import domain from "../../config";
 import "../../css/organisationAddForm.css";
 import { Button, Col, Row, Form } from "react-bootstrap";
 
-const OrganisationAddForm = ({ setShowAdd }) => {
+const OrganisationAddForm = ({ setShowAddOrg }) => {
   const [logo, setLogo] = useState("");
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
@@ -111,7 +111,7 @@ const OrganisationAddForm = ({ setShowAdd }) => {
             size="lg"
             block
             onClick={() => {
-              setShowAdd(false);
+              setShowAddOrg(false);
             }}
           >
             Cancel

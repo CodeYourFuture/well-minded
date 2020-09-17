@@ -14,6 +14,7 @@ const AdminArea = ({
   isAdmin,
 }) => {
   const [showAdd, setShowAdd] = useState(false);
+  const [showAddOrg,setShowAddOrg] = useState(false);
   const addResource = (resource) => {
     setResources([resource, ...resources]);
   };
@@ -28,14 +29,22 @@ const AdminArea = ({
       {isAdmin && (
         <>
           <Row className="mt-5">
-            <Col>
+            <Col className=" text-center ">
               <button
-                className="btn-nextlink"
+                className="btn-nextlink mr-5"
                 onClick={() => {
                   setShowAdd(true);
                 }}
               >
                 add resource
+              </button>
+              <button
+                className="btn-nextlink mb-3 "
+                onClick={() => {
+                  setShowAddOrg(true);
+                }}
+              >
+                add organisation
               </button>
 
               {showAdd && (
@@ -45,19 +54,12 @@ const AdminArea = ({
                   addResource={addResource}
                 />
               )}
+              {showAddOrg && (
+                <OrganisationAddForm 
+                setShowAddOrg={setShowAddOrg} />
+              )}
             </Col>
-            <Col>
-              <Button
-                className="btn-nextlink"
-                onClick={() => {
-                  setShowAdd(true);
-                }}
-              >
-                add organisation
-              </Button>
-
-              {showAdd && <OrganisationAddForm setShowAdd={setShowAdd} />}
-            </Col>
+            
           </Row>
           <Row>
             <Col>
