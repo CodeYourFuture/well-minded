@@ -38,10 +38,7 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
       <Row className="p-3">
         <Col>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Title</Form.Label>
-            <Form.Label>
-              <span className="asterisk">*</span>
-            </Form.Label>
+            
 
             <Form.Control
               className="form-control"
@@ -49,15 +46,13 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
               name="name"
               value={newResource.name}
               onChange={handlerAddnewResource}
+              placeholder="title"
             />
           </Form.Group>
         </Col>
         <Col>
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Website</Form.Label>
-            <Form.Label>
-            <span className="asterisk">*</span>
-            </Form.Label>
+            
 
             <Form.Control
               className="form-control"
@@ -65,6 +60,7 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
               name="website"
               value={newResource.website}
               onChange={handlerAddnewResource}
+              placeholder="website"
             />
           </Form.Group>
         </Col>
@@ -72,10 +68,7 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
       <Row className="p-3">
         <Col>
           <Form.Group>
-            <Form.Label>Description</Form.Label>
-            <Form.Label>
-              <span className="asterisk">*</span>
-            </Form.Label>
+           
 
             <Form.Control
               as="textarea"
@@ -85,6 +78,7 @@ const ResourceAddForm = ({ addResource, setShowAdd }) => {
               name="description"
               value={newResource.description}
               onChange={handlerAddnewResource}
+              placeholder="description"
             />
           </Form.Group>
         </Col>
