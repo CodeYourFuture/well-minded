@@ -16,6 +16,12 @@ const Contact = () => {
     website: "",
     comment: "",
   });
+
+const [success, setSuccess] = useState({
+  sucess: false,
+  msg : ""
+})
+
   const handleContact = (e) => {
     const addContact = {
       ...newContact,
@@ -23,14 +29,41 @@ const Contact = () => {
     };
     setNewContact(addContact);
   };
+
+
+ const validateContact = (contact) =>{
+    for (const prop in contact){
+      if(contact[prop] === "" || contact[prop] === " "){
+        console.log(prop, "....inside ...");
+        const newErors = 
+          {
+            ...formErrors,
+            [prop]: `${prop} cant be empty`        
+          }
+        
+          console.log(newErors);
+        setFormErrors(newErors)
+
+      }
+    }
+  }
+
+ const isEmpty = (str) => {
+   console.log( "str >>" , str );
+    if(str === "") { return true; } else { return false; }
+  }
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if( newContact.name === "" ){
-      setFormErrors({
-        ...formErrors, name: "name cant be empty"
-      })
+    const c = newContact;
+
+    if( isEmpty(c.name) || isEmpty(c.email) || isEmpty(c.comment)){
+      validateContact(c);
       return;
     }
+
+    console.log("afterr ");
     fetch(domain+ "/api/contact", {
       method: "POST",
       headers: {
@@ -45,16 +78,40 @@ const Contact = () => {
           website: "",
           comment: "",
         });
+
+        setFormErrors({
+          name: null,
+          email: null,
+          website: null,
+          comment: null,
+        
+      });
+
+      setSuccess({
+        success:true,
+        msg: "thank you for concating us !!"
+      })
+
       })
       .catch((err) => console.log(err));
   };
   return (
     <div className="container contact">
+    <pre>
+      { JSON.stringify(formErrors) }
+    </pre>
       <h1 className="text-center"> Contact Us </h1>
       <p>
         If you have any suggestions or just want to contact us, please complete
         this form
       </p>
+
+{ success.success &&
+      <div className="alert alert-success" role="alert">
+      { success.msg }
+        </div>
+}
+
       <Form className="text-centre contact-form p-3">
         <Form.Group>
           <Form.Label>Name <span className="asterisk">*</span></Form.Label>
@@ -78,6 +135,7 @@ const Contact = () => {
             value={newContact.email}
             onChange={handleContact}
           />
+          { formErrors.email && <div className="text-white bg-danger mt-1"> { formErrors.email } </div> }
         </Form.Group>
         <Form.Group>
           <Form.Label>Website </Form.Label>
@@ -89,6 +147,7 @@ const Contact = () => {
             value={newContact.website}
             onChange={handleContact}
           />
+           { formErrors.website && <div className="text-white bg-danger mt-1"> { formErrors.website } </div> }
         </Form.Group>
         <Form.Group>
           <Form.Label>Comment <span className="asterisk">*</span></Form.Label>
@@ -100,6 +159,7 @@ const Contact = () => {
             value={newContact.comment}
             onChange={handleContact}
           />
+           { formErrors.comment && <div className="text-white bg-danger mt-1"> { formErrors.comment } </div> }
         </Form.Group>
         <Button type="submit" onClick={handleSubmit}>
           Submit
