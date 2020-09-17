@@ -10,6 +10,7 @@ const Allresources = ({
   isAdmin,
 }) => {
   const [desc, setDesc] = useState("");
+  const [fullDesc, setFullDesc] = useState(false)
 
   useEffect(() => {
     resource.name && setDesc(resource.description.substr(0, 150));
@@ -32,14 +33,34 @@ const Allresources = ({
       <Card.Body>
         <Card.Text className="resource-cardtxt">
           {desc}
-          <span
-            className="load-more-btn"
-            onClick={() => {
-              setDesc(resource.description);
-            }}
-          >
-            load more{" "}
-          </span>
+          { fullDesc ?  (
+              
+              <span
+              className="btn btn-link"
+              onClick={() => {
+                setFullDesc(false);
+                setDesc(resource.description.substr(0, 150));
+              }}
+            >
+              show less{" "}
+           
+            </span>
+              
+              ) : ( 
+
+            resource.description.length > 150 ?  ( 
+              <span
+              className="btn btn-link"
+              onClick={() => {
+                setDesc(resource.description);
+                setFullDesc(true);
+              }}
+            >
+              show more{" "}
+           
+            </span>
+            ): ("")
+          )}
         </Card.Text>
         <a className="btn-nextlink float-right" href={resource.website}>
           Visit Website
