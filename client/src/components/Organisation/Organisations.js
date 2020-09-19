@@ -50,18 +50,6 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
             name="from"
             placeholder="Search Organisation"
           />
-          {isAdmin && (
-            <Button
-              className="mt-2"
-              variant="primary"
-              onClick={() => {
-                setShowAdd(true);
-              }}
-            >
-              add organisation
-            </Button>
-          )}
-          {showAdd && <OrganisationAddForm setShowAdd={setShowAdd} />}
           {filteredOrgs.map((organisation) => {
             return (
               <Card className="border-2 org-text" key={organisation._id}>
@@ -82,7 +70,8 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
                     {organisation.description}
                   </Card.Text>
                   <Card.Text className="text-location">
-                    <span className="location">Location: </span>{organisation.location}
+                    <span className="location">Location: </span>
+                    {organisation.location}
                   </Card.Text>
                   <a
                     className="btn-nextlink float-right"
