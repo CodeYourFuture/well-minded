@@ -24,6 +24,11 @@ const Messages = ({ contactMessages, setContactMessages, isAdmin }) => {
         <Container >
             <Row>
                 <Col>
+                <h2 className="messages-title mt-3">Contact Messages</h2>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <Table responsive bordered hover className="mt-5" >
                         <thead>
                             <tr>
