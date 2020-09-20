@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import domain from "../../config";
-import Button from "react-bootstrap/Button";
+import { Button, FormControl, InputGroup } from "react-bootstrap";
 
 const OrganisationEditDelete = ({
   organisation,
@@ -68,19 +68,10 @@ const OrganisationEditDelete = ({
     <div>
       {isAdmin && (
         <>
-          <Button
-            className="mr-2"
-            variant="primary"
-            onClick={handleShow}
-          
-          >
+          <Button className="mr-2" variant="primary" onClick={handleShow}>
             edit
           </Button>
-          <Button
-            
-            variant="danger"
-            onClick={handlerRemove}
-          >
+          <Button variant="danger" onClick={handlerRemove}>
             remove
           </Button>
         </>
@@ -98,50 +89,76 @@ const OrganisationEditDelete = ({
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form>
-            <label>Logo</label>
-            <input
-              value={addLogo}
-              onChange={(e) => {
-                setAddLogo(e.target.value);
-              }}
-            />
-            <label>Name</label>
-            <input
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Name</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
               value={addName}
               onChange={(e) => {
                 setAddName(e.target.value);
               }}
             />
-            <label>Category</label>
-            <input
-              value={addCategory}
-              onChange={(e) => {
-                setAddCategory(e.target.value);
-              }}
-            />
-            <label>Website</label>
-            <input
-              value={addWebsite}
-              onChange={(e) => {
-                setAddWebsite(e.target.value);
-              }}
-            />
-            <label>Location</label>
-            <input
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Location</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
               value={addLocation}
               onChange={(e) => {
                 setAddLocation(e.target.value);
               }}
             />
-            <label>Description</label>
-            <input
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Description</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              fluid
+              as="textarea"
+              rows="4"
               value={addDescription}
               onChange={(e) => {
                 setAddDescription(e.target.value);
               }}
             />
-          </form>
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Website</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              value={addWebsite}
+              onChange={(e) => {
+                setAddWebsite(e.target.value);
+              }}
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Category</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              value={addName}
+              onChange={(e) => {
+                setAddCategory(e.target.value);
+              }}
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Logo</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              value={addName}
+              onChange={(e) => {
+                setAddLogo(e.target.value);
+              }}
+            />
+          </InputGroup>
+      
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
