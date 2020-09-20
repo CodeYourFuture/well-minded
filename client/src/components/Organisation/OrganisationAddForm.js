@@ -100,7 +100,7 @@ const OrganisationAddForm = ({ setShowAddOrg }) => {
       </Form.Row>
       <Form.Row className="p-3 justify-content-center">
         <Col>
-          <Button className="add-form-btn" variant="primary" size="lg" block>
+          <Button className="add-form-btn" variant="primary" size="lg">
             Add Organisation
           </Button>
         </Col>
