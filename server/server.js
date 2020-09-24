@@ -48,6 +48,8 @@ app.use("/api/contact", contact)
 // if deployed, use react build as a code source.
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client", "build")));
+  
+  console.log(path.join(__dirname, "client", "build"));
 
   app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, ".." , "client", "build", "index.html"));
