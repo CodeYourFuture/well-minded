@@ -9,6 +9,7 @@ import { Container, Row, Col } from "react-bootstrap"
 const Messages = ({ contactMessages, setContactMessages, isAdmin }) => {
 
     const [showMessages, setShowMessages] = useState(false);
+    
     const filterMessage = contactMessages.slice(0, 4)
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostPerPage] = useState(5);
@@ -61,8 +62,8 @@ const Messages = ({ contactMessages, setContactMessages, isAdmin }) => {
                     />
                     </div>
                     </Col>
-            </ Row>
-        </ Container>
+            </Row>
+        </Container>
     )
 }
 

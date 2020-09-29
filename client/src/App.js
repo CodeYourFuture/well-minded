@@ -134,7 +134,16 @@ function App() {
           path="/login"
           render={(props) => <Login {...props} setIsAdmin={setIsAdmin} />}
         />
-        <Route path="/contact" component={Contact} />
+        <Route
+          path="/contact"
+          render={(props) => (
+            <Contact
+              {...props}
+              contactMessages={contactMessages}
+              setContactMessages={setContactMessages}
+            />
+          )}
+        />
       </Switch>
 
       <Footer isAdmin={isAdmin} logout={logout} />

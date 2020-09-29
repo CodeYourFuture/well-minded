@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import "../../css/Contact.css";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import domain from "../../config";
-const Contact = () => {
+
+const Contact = ({ contactMessages, setContactMessages }) => {
+  const addMessage = (message) => {
+    setContactMessages([message, ...contactMessages]);
+  };
   const [formErrors, setFormErrors] = useState({
     name: null,
     email: null,
@@ -32,20 +36,16 @@ const Contact = () => {
   const validateContact = (contact) => {
     for (const prop in contact) {
       if (contact[prop] === "" || contact[prop] === " ") {
-        console.log(prop, "....inside ...");
         const newErors = {
           ...formErrors,
           [prop]: `${prop} cant be empty`,
         };
-
-        console.log(newErors);
         setFormErrors(newErors);
       }
     }
   };
 
   const isEmpty = (str) => {
-    console.log("str >>", str);
     if (str === "") {
       return true;
     } else {
@@ -62,7 +62,6 @@ const Contact = () => {
       return;
     }
 
-    console.log("afterr ");
     fetch(domain + "/api/contact", {
       method: "POST",
       headers: {
@@ -76,7 +75,7 @@ const Contact = () => {
           email: "",
           website: "",
           comment: "",
-        });
+        }).then((data) => addMessage(data.message));
 
         setFormErrors({
           name: null,
@@ -93,7 +92,7 @@ const Contact = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <Container>
+    <Container className="contact">
       <Row>
         <Col>
           <h1 className="text-center mt-3"> Contact Us </h1>
@@ -143,10 +142,7 @@ const Contact = () => {
             onChange={handleContact}
           />
           {formErrors.email && (
-            <div className="text-white bg-danger mt-1">
-              {" "}
-              {formErrors.email}{" "}
-            </div>
+            <div className="text-white bg-danger mt-1">{formErrors.email}</div>
           )}
         </Form.Group>
         <Form.Group>
@@ -161,8 +157,7 @@ const Contact = () => {
           />
           {formErrors.website && (
             <div className="text-white bg-danger mt-1">
-              {" "}
-              {formErrors.website}{" "}
+              {formErrors.website}
             </div>
           )}
         </Form.Group>
@@ -180,8 +175,7 @@ const Contact = () => {
           />
           {formErrors.comment && (
             <div className="text-white bg-danger mt-1">
-              {" "}
-              {formErrors.comment}{" "}
+              {formErrors.comment}
             </div>
           )}
         </Form.Group>
