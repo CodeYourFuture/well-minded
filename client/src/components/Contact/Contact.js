@@ -5,7 +5,7 @@ import domain from "../../config";
 
 const Contact = ({ contactMessages, setContactMessages }) => {
   const addMessage = (message) => {
-    setContactMessages([message, ...contactMessages]);
+    setContactMessages([message,...contactMessages]);
   };
   const [formErrors, setFormErrors] = useState({
     name: null,

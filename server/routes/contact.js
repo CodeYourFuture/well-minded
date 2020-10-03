@@ -25,7 +25,8 @@ router.post("/", (req, res) => {
   contact
     .save()
     .then(contact => {
-      res.status(201).json(contact);
+      res.status(201).json({
+        contact:contact})
     })
     .catch(err => {
       console.log(err);

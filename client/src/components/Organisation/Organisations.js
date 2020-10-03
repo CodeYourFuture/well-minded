@@ -38,14 +38,14 @@ const Organisations = ({ organisations, setOrganisations, isAdmin }) => {
   return (
     <Container>
       <Row>
-        <Col>
-          <h2 className="org-headline text-center mt-3">
+        <Col >
+          <h2 className="org-headline text-center mt-3 ">
             Find an Organisation
           </h2>
           <Form.Control
             value={searchOrg}
             onChange={(e) => setSearchOrg(e.target.value)}
-            className="p-3"
+            className="p-3 "
             type="search"
             name="from"
             placeholder="Search Organisation"

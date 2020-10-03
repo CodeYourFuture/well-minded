@@ -40,11 +40,11 @@ const Resources = ({ resources, setResources, isAdmin }) => {
     <Container>
       <Row>
         <Col className="text-center">
-          <h3 className="mt-3">Find an resource</h3>
+          <h3 className="mt-3">Find a Resource</h3>
         </Col>
       </Row>
       <Row>
-        <Col className="mb-5">
+        <Col className="mb-3">
           <InputResSearch
             searchResource={searchResource}
             setSearchResource={setSearchResource}
